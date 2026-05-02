@@ -29,6 +29,7 @@ pip install newton warp-lang usd-core numpy
 | Example | Description |
 |---|---|
 | [rj45_hydro](examples/rj45_hydro/) | RJ45 plug insertion with hydroelastic contacts and live pressure patch visualisation |
+| [spline_insertion](examples/spline_insertion/) | DIN 5480 16-tooth splined shaft kinematically driven into its mating hub; Newton mesh-SDF contacts visualised as arrows |
 
 ---
 
@@ -44,6 +45,7 @@ Or for a specific example:
 
 ```powershell
 python -m pytest examples/rj45_hydro/tests/ -v
+python -m pytest examples/spline_insertion/tests/ -v
 ```
 
 ---
