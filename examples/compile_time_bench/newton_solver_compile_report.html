@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>newton_solver_compile_report</title>
+  <style>
+
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+
+ul.task-list[class]{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+font-size: inherit;
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+  <style type="text/css">@page {
+size: Letter;
+margin: 0.5in 0.6in;
+}
+body {
+font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+font-size: 9.5pt;
+line-height: 1.35;
+color: #1a1a1a;
+max-width: none;
+margin: 0;
+}
+h1 {
+font-size: 16pt;
+margin: 0 0 4pt 0;
+border-bottom: 2px solid #76b900;
+padding-bottom: 2pt;
+color: #1a1a1a;
+}
+h2 {
+font-size: 11pt;
+margin: 10pt 0 3pt 0;
+color: #76b900;
+}
+h3 {
+font-size: 10pt;
+margin: 6pt 0 2pt 0;
+}
+p { margin: 3pt 0; }
+ul, ol { margin: 3pt 0 3pt 18pt; }
+li { margin: 1pt 0; }
+table {
+border-collapse: collapse;
+margin: 4pt 0 6pt 0;
+font-size: 9pt;
+width: 100%;
+}
+th, td {
+border: 1px solid #ccc;
+padding: 2pt 5pt;
+text-align: left;
+}
+th {
+background: #f0f0f0;
+font-weight: 600;
+}
+td:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+code {
+font-family: "Consolas", "Cascadia Code", monospace;
+font-size: 8.5pt;
+background: #f4f4f4;
+padding: 0 2pt;
+border-radius: 2pt;
+}
+pre {
+background: #f4f4f4;
+padding: 4pt 6pt;
+border-radius: 3pt;
+font-size: 8pt;
+line-height: 1.25;
+overflow-x: auto;
+}
+hr { border: none; border-top: 1px solid #ddd; margin: 8pt 0; }
+strong { color: #1a1a1a; }
+em { color: #555; }
+</style>
+</head>
+<body>
+<h1 id="newton-1.2-solver-cold-start-compile-benchmark">Newton 1.2
+Solver Cold-Start Compile Benchmark</h1>
+<p><strong>Hardware:</strong> RTX 5000 Ada Generation Laptop (sm_89, 16
+GB), Windows 11. <strong>Software:</strong> Newton 1.2.0, Warp 1.13.0,
+CUDA driver 13.0, mujoco-warp 3.8.1. <strong>Date:</strong>
+2026-05-13.</p>
+<h2 id="tldr">TL;DR</h2>
+<p>Newton 1.2’s three GPU solvers differ by <strong>~2.3×</strong> in
+cold-start compile cost. MuJoCo (~142 s) is the heaviest, Kamino (~133
+s) close behind, VBD (~62 s) the lightest. <strong>Once cached, every
+solver starts in 5–8 s.</strong> Cold cost is dominated by the
+<code>Example.__init__</code> phase, which compiles all Warp/NVRTC
+kernels via the example’s warm-start <code>solver.step()</code>
+call.</p>
+<h2 id="methodology">Methodology</h2>
+<p>For each solver: pick one representative example, run cold + warm,
+headless (<code>--viewer null</code>, <code>--num-frames 1</code>). Each
+iteration deletes <strong>both</strong> the Warp source-hash cache
+(<code>%LOCALAPPDATA%\NVIDIA\warp\Cache\1.13.0</code>) and the CUDA
+driver’s NVRTC ComputeCache (<code>%APPDATA%\NVIDIA\ComputeCache</code>)
+before the cold run. Solver order is Fisher–Yates shuffled per iteration
+to spread OS file-cache warmth. <strong>3 iterations.</strong> Phase
+timings come from a Python instrumentation wrapper
+(<code>time_example_phases.py</code>) that drives each example’s
+<code>Example</code> class directly and exits cleanly after one frame;
+this avoids ViewerGL’s blocking run loop.</p>
+<h2 id="solver-example-mapping">Solver → example mapping</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Solver</th>
+<th>Example</th>
+<th>Scenario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kamino (PADMM)</td>
+<td><code>kamino_robot_dr_legs</code></td>
+<td>Disney quadruped, 36 joints, 1 world</td>
+</tr>
+<tr>
+<td>MuJoCo (mujoco-warp)</td>
+<td><code>robot_anymal_d</code></td>
+<td>ANYmal D quadruped, 1 world</td>
+</tr>
+<tr>
+<td>VBD</td>
+<td><code>cloth_hanging</code></td>
+<td>64 × 32 cloth on ground plane</td>
+</tr>
+</tbody>
+</table>
+<h2 id="roll-up-totals-seconds">Roll-up (totals, seconds)</h2>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th style="text-align: right;">Kamino</th>
+<th style="text-align: right;">MuJoCo</th>
+<th style="text-align: right;">VBD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Cold</strong> (median)</td>
+<td style="text-align: right;"><strong>132.5</strong></td>
+<td style="text-align: right;"><strong>142.4</strong></td>
+<td style="text-align: right;"><strong>61.9</strong></td>
+</tr>
+<tr>
+<td>Cold (range)</td>
+<td style="text-align: right;">126.3 – 136.2</td>
+<td style="text-align: right;">139.5 – 177.9</td>
+<td style="text-align: right;">60.2 – 62.0</td>
+</tr>
+<tr>
+<td><strong>Warm</strong> (median)</td>
+<td style="text-align: right;"><strong>7.9</strong></td>
+<td style="text-align: right;">7.3</td>
+<td style="text-align: right;"><strong>4.9</strong></td>
+</tr>
+<tr>
+<td>Warm (range)</td>
+<td style="text-align: right;">7.6 – 48.5†</td>
+<td style="text-align: right;">7.1 – 8.0</td>
+<td style="text-align: right;">4.9 – 4.9</td>
+</tr>
+</tbody>
+</table>
+<p>†One 48.5 s warm outlier on Kamino: Python import phase ballooned to
+37 s, likely because the preceding cold run rewrote ~600 MB of NVRTC
+cache and evicted Python source pages from OS file cache. Solver init
+was a normal 9.9 s.</p>
+<h2 id="where-the-cold-time-goes-median-seconds">Where the cold time
+goes (median, seconds)</h2>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th>Phase</th>
+<th style="text-align: right;">Kamino</th>
+<th style="text-align: right;">MuJoCo</th>
+<th style="text-align: right;">VBD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>import newton</code> + module</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">3.5</td>
+</tr>
+<tr>
+<td>Viewer ctor (Null)</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: right;">0.2</td>
+<td style="text-align: right;">0.2</td>
+</tr>
+<tr>
+<td><code>Example.__init__</code> (USD + model + <strong>Warp
+compile</strong>)</td>
+<td style="text-align: right;"><strong>129.0</strong></td>
+<td style="text-align: right;"><strong>137.9</strong></td>
+<td style="text-align: right;"><strong>51.1</strong></td>
+</tr>
+<tr>
+<td>1 step (CUDA graph capture’d)</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.0</td>
+</tr>
+<tr>
+<td>1 render</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;">0.0</td>
+<td style="text-align: right;"><strong>7.0</strong></td>
+</tr>
+</tbody>
+</table>
+<p>For Kamino and MuJoCo, ~97 % of cold time is in
+<code>Example.__init__</code>, specifically the warm-start
+<code>solver.step()</code> that triggers JIT compile of every kernel the
+solver will need. <strong>VBD is the odd one:</strong> ~14 % of its cold
+cost (7 s) lands in the <strong>first render</strong> because the
+deformable visualization compiles its own kernels lazily on first draw
+rather than during init.</p>
+<h2 id="per-solver-kernel-hot-spots-cold-single-iteration-trace">Per-solver
+kernel hot-spots (cold, single-iteration trace)</h2>
+<p><strong>Kamino</strong> — 38 modules, ~75 s compile. Two kernels are
+59 % of the cost: - <code>kamino.linalg.factorize.llt_blocked</code> —
+<strong>26.0 s</strong> (blocked sparse Cholesky) -
+<code>kamino.solvers.fk.kernels</code> — <strong>18.4 s</strong>
+(forward kinematics) - PADMM kernels — 4 instantiations × ~3 s each -
+Bucket: 65.5 s solver, 3.3 s viewer, 2.2 s geometry, 2.2 s
+narrowphase</p>
+<p><strong>MuJoCo</strong> — 49 modules, ~110 s compile. Broad and
+shallow, no single dominant kernel: -
+<code>newton.sim.articulation</code> — 12.5 s -
+<code>newton.solvers.mujoco.kernels</code> — 12.4 s -
+<code>update_gradient_cholesky</code> — 11.2 s -
+<code>tile_cholesky_factorize</code> — 10.5 s -
+<code>mesh_triangle_contacts_to_reducer</code> — 10.3 s - Bucket: 28.1 s
+across <code>mujoco_warp.*</code> submodules
+(sensor/smooth/forward/io/constraint/solver/passive)</p>
+<p><strong>VBD</strong> — 14 modules, ~53 s compile. Smallest count,
+evenly distributed: - <code>vbd.rigid_vbd_kernels</code> — 10.8 s -
+<code>vbd.particle_vbd_kernels</code> — 3 instantiations totalling 13.9
+s - <code>newton.geometry.kernels</code> — 2 instantiations totalling
+11.3 s - Bucket: 24.7 s solver, 11.6 s geometry, 7.9 s viewer, 6.7 s
+narrowphase</p>
+<p><strong>Shared across all three:</strong> narrowphase GJK/MPR (~2–8
+s/solver), viewer kernels (~3–8 s/solver), and a handful of
+<code>newton.geometry.*</code> modules. These recompile per-scene
+because they’re config-instantiated.</p>
+<h2 id="variance-notes">Variance notes</h2>
+<ul>
+<li><strong>NVRTC ComputeCache matters more than the Warp
+cache.</strong> A “cold” run that wipes only the Warp cache (yesterday’s
+protocol) under-reports cold cost by 20–55 % because the driver still
+has cubin entries cached. Today’s “true cold” Kamino is 132 s vs
+yesterday’s 86 s — same code, same hardware, different cache
+discipline.</li>
+<li><strong>First-of-session OS file cache warm-up</strong> can add ~25
+% to the first cold compile (e.g., iter 1 MuJoCo at 177 s vs 140 s
+subsequently).</li>
+<li><strong>Warm runs are not noise-free</strong> in this protocol —
+clearing 600 MB of NVRTC cache between cold runs can evict Python pages
+from OS cache, occasionally inflating the next warm run’s import phase
+by ~30 s. The Example init itself remains clean (~4 s).</li>
+</ul>
+<h2 id="implications">Implications</h2>
+<ul>
+<li><strong>Steady-state (any relaunch with cache intact): 5–8
+s.</strong> No solver choice penalty at runtime.</li>
+<li><strong>First-time setup on a fresh machine: ~140 s for rigid
+robots, ~60 s for cloth.</strong> Plan for it in dev onboarding
+docs.</li>
+<li><strong>MuJoCo’s compile cost is the most fragmented</strong> — no
+single hot kernel to target for upstream optimization. Kamino has 2
+obvious targets (<code>llt_blocked</code>, <code>fk.kernels</code>)
+totalling 44 s if anyone wants to invest there.</li>
+<li><strong>VBD’s lazy first-render compile is a UX trap</strong> —
+looks “ready” after init but stalls 7 s on first frame. Worth fixing if
+low-latency first-frame matters.</li>
+</ul>
+<hr />
+<p><em>Bench scripts: <code>bench_solver_rigorous.sh</code>,
+<code>time_example_phases.py</code>, <code>aggregate_rigorous.py</code>,
+<code>parse_kernel_compile.py</code> (all in repo root).</em></p>
+</body>
+</html>

@@ -30,6 +30,7 @@ pip install newton warp-lang usd-core numpy
 |---|---|
 | [rj45_hydro](examples/rj45_hydro/) | RJ45 plug insertion with hydroelastic contacts and live pressure patch visualisation |
 | [spline_insertion](examples/spline_insertion/) | DIN 5480 16-tooth splined shaft kinematically driven into its mating hub; Newton mesh-SDF contacts visualised as arrows |
+| [compile_time_bench](examples/compile_time_bench/) | Cold-start compile-time benchmark for Newton 1.2's Kamino, MuJoCo, and VBD solvers — randomized 3-iteration runs, phase + per-kernel breakdown, PDF report |
 
 ---
 
