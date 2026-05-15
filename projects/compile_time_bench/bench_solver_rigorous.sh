@@ -12,14 +12,23 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 RESULTS_DIR="$SCRIPT_DIR/results"
 mkdir -p "$RESULTS_DIR"
 
+# Variant suffix on output files; propagated to the python script via env.
+VARIANT="${VARIANT:-baseline}"
+export BENCH_VARIANT="$VARIANT"
+SUFFIX=""
+if [[ "$VARIANT" != "baseline" ]]; then
+    SUFFIX="_$VARIANT"
+fi
+
 WARP_CACHE="${WARP_CACHE:-$LOCALAPPDATA/NVIDIA/warp/Cache/1.13.0}"
 NVRTC_CACHE="${NVRTC_CACHE:-$APPDATA/NVIDIA/ComputeCache}"
-LOG="$RESULTS_DIR/solver_rigorous.txt"
-CSV="$RESULTS_DIR/solver_rigorous.csv"
+LOG="$RESULTS_DIR/solver_rigorous${SUFFIX}.txt"
+CSV="$RESULTS_DIR/solver_rigorous${SUFFIX}.csv"
 SCRIPT="$SCRIPT_DIR/time_example_phases.py"
 export NEWTON_CACHE_PATH="${NEWTON_CACHE_PATH:-C:\\nc}"
 N_ITERS="${N_ITERS:-3}"
 SOLVERS=(kamino_robot_dr_legs robot_anymal_d cloth_hanging)
+echo "VARIANT=$VARIANT  LOG=$LOG  CSV=$CSV"
 
 : > "$LOG"
 echo "iter,solver,kind,import_s,viewer_s,init_s,step_s,render_s,total_s" > "$CSV"

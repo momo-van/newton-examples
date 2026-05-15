@@ -1,0 +1,933 @@
+########## ITER 1 / order: kamino_robot_dr_legs cloth_hanging robot_anymal_d ##########
+===== iter=1 / cold / kamino_robot_dr_legs =====
+C:\Users\mmohajerani\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\newton\_src\sim\builder.py:2601: UserWarning: No articulation was found but 36 joints were parsed: [/DR_Legs/Joints/j1_l_i, /DR_Legs/Joints/j2_l_i, /DR_Legs/Joints/j3_l_i, /DR_Legs/Joints/j4_l_i, /DR_Legs/Joints/j5_l_i, /DR_Legs/Joints/j6_l_i, /DR_Legs/Joints/j7_l_i, /DR_Legs/Joints/j8_l_i, /DR_Legs/Joints/j9_l_i, /DR_Legs/Joints/j1_l_o, /DR_Legs/Joints/j2_l_o, /DR_Legs/Joints/j3_l_o, /DR_Legs/Joints/j4_l_o, /DR_Legs/Joints/j5_l_o, /DR_Legs/Joints/j6_l_o, /DR_Legs/Joints/j7_l_o, /DR_Legs/Joints/j8_l_o, /DR_Legs/Joints/j9_l_o, /DR_Legs/Joints/j1_r_i, /DR_Legs/Joints/j2_r_i, /DR_Legs/Joints/j3_r_i, /DR_Legs/Joints/j4_r_i, /DR_Legs/Joints/j5_r_i, /DR_Legs/Joints/j6_r_i, /DR_Legs/Joints/j7_r_i, /DR_Legs/Joints/j8_r_i, /DR_Legs/Joints/j9_r_i, /DR_Legs/Joints/j1_r_o, /DR_Legs/Joints/j2_r_o, /DR_Legs/Joints/j3_r_o, /DR_Legs/Joints/j4_r_o, /DR_Legs/Joints/j5_r_o, /DR_Legs/Joints/j6_r_o, /DR_Legs/Joints/j7_r_o, /DR_Legs/Joints/j8_r_o, /DR_Legs/Joints/j9_r_o]. Make sure your USD asset includes an articulation root prim with the PhysicsArticulationRootAPI.
+If you want to proceed with these orphan joints, make sure to call ModelBuilder.finalize(skip_validation_joints=True) to avoid raising a ValueError. Note that not all solvers will support such a configuration.
+  return parse_usd(
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.geometry.inertia 2e0efd6 load on device 'cuda:0' took 3895.21 ms  (compiled)
+Module validate_and_correct_inertia_kernel_a682b50c a682b50 load on device 'cuda:0' took 377.06 ms  (compiled)
+Module newton._src.solvers.kamino._src.core.conversions c5498a2 load on device 'cuda:0' took 4726.23 ms  (compiled)
+Module newton._src.solvers.kamino._src.core.bodies 7f35ca5 load on device 'cuda:0' took 542.23 ms  (compiled)
+Module newton._src.solvers.kamino._src.geometry.unified a630f1e load on device 'cuda:0' took 949.66 ms  (compiled)
+Module newton._src.solvers.kamino._src.utils.world_equivalence 5490f3c load on device 'cuda:0' took 275.08 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.fk.kernels 9379285 load on device 'cuda:0' took 18501.78 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.constraints 1c190a2 load on device 'cuda:0' took 471.55 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.jacobians 949ff53 load on device 'cuda:0' took 4306.66 ms  (compiled)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 3370.90 ms  (compiled)
+Module newton._src.solvers.kamino._src.geometry.contacts 5dc189e load on device 'cuda:0' took 461.71 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.joints 7527995 load on device 'cuda:0' took 1217.65 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.limits 3157d9f load on device 'cuda:0' took 597.34 ms  (compiled)
+Module newton._src.solvers.kamino._src.dynamics.wrenches 65b0010 load on device 'cuda:0' took 889.98 ms  (compiled)
+Module newton._src.solvers.kamino._src.dynamics.delassus 38e708f load on device 'cuda:0' took 703.05 ms  (compiled)
+Module newton._src.solvers.kamino._src.dynamics.dual fa0fa89 load on device 'cuda:0' took 941.02 ms  (compiled)
+Module newton._src.solvers.kamino._src.geometry.keying b655b3e load on device 'cuda:0' took 190.19 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.warmstart 7444518 load on device 'cuda:0' took 896.37 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels 82e8723 load on device 'cuda:0' took 2793.44 ms  (compiled)
+Module newton._src.solvers.kamino._src.linalg.factorize.llt_blocked 8d4d103 load on device 'cuda:0' took 32210.47 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels ef61502 load on device 'cuda:0' took 2845.30 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels d8fea14 load on device 'cuda:0' took 3704.06 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels 4be1e70 load on device 'cuda:0' took 3319.63 ms  (compiled)
+Module newton._src.solvers.kamino._src.integrators.euler d36eb8b load on device 'cuda:0' took 355.87 ms  (compiled)
+Module newton._src.solvers.kamino._src.core.time bdcc507 load on device 'cuda:0' took 196.88 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.resets d26c318 load on device 'cuda:0' took 1634.89 ms  (compiled)
+Module newton._src.geometry.broad_phase_nxn 50d95f3 load on device 'cuda:0' took 326.25 ms  (compiled)
+Module narrow_phase_primitive_write_contact_unified_kamino c159f57 load on device 'cuda:0' took 2680.01 ms  (compiled)
+Module narrow_phase_gjk_mpr_True_write_contact_unified_kamino_default_default 2bc66f0 load on device 'cuda:0' took 9636.29 ms  (compiled)
+Module newton._src.geometry.narrow_phase 677b8d2 load on device 'cuda:0' took 1502.08 ms  (compiled)
+Module newton._src.geometry.contact_reduction_global 1e557ea load on device 'cuda:0' took 612.10 ms  (compiled)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 1419.19 ms  (compiled)
+Module newton._src.geometry.sdf_contact ad85f16 load on device 'cuda:0' took 318.76 ms  (compiled)
+Module narrow_phase_mesh_plane_write_contact_to_reducer_True d064a77 load on device 'cuda:0' took 629.99 ms  (compiled)
+Module mesh_triangle_contacts_to_reducer_kernel_06a2ef31 475a937 load on device 'cuda:0' took 8723.37 ms  (compiled)
+Module newton._src.geometry.contact_reduction_global 5c5decd load on device 'cuda:0' took 659.05 ms  (compiled)
+Module sdf_contact_write_contact_to_reducer_False_True 392ea80 load on device 'cuda:0' took 2721.67 ms  (compiled)
+Module export_reduced_contacts_write_contact_unified_kamino 9596458 load on device 'cuda:0' took 433.01 ms  (compiled)
+=== PHASE TIMING (s) :: kamino_robot_dr_legs ===
+  after_import              total=  35.34  delta=  35.34
+  after_viewer_ctor         total=  36.38  delta=   1.05
+  after_example_init        total= 164.40  delta= 128.02
+  after_step                total= 164.40  delta=   0.00
+  after_render              total= 164.41  delta=   0.00
+  end                       total= 164.41  delta=   0.00
+TOTAL: 164.41s
+===== iter=1 / warm / kamino_robot_dr_legs =====
+C:\Users\mmohajerani\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\newton\_src\sim\builder.py:2601: UserWarning: No articulation was found but 36 joints were parsed: [/DR_Legs/Joints/j1_l_i, /DR_Legs/Joints/j2_l_i, /DR_Legs/Joints/j3_l_i, /DR_Legs/Joints/j4_l_i, /DR_Legs/Joints/j5_l_i, /DR_Legs/Joints/j6_l_i, /DR_Legs/Joints/j7_l_i, /DR_Legs/Joints/j8_l_i, /DR_Legs/Joints/j9_l_i, /DR_Legs/Joints/j1_l_o, /DR_Legs/Joints/j2_l_o, /DR_Legs/Joints/j3_l_o, /DR_Legs/Joints/j4_l_o, /DR_Legs/Joints/j5_l_o, /DR_Legs/Joints/j6_l_o, /DR_Legs/Joints/j7_l_o, /DR_Legs/Joints/j8_l_o, /DR_Legs/Joints/j9_l_o, /DR_Legs/Joints/j1_r_i, /DR_Legs/Joints/j2_r_i, /DR_Legs/Joints/j3_r_i, /DR_Legs/Joints/j4_r_i, /DR_Legs/Joints/j5_r_i, /DR_Legs/Joints/j6_r_i, /DR_Legs/Joints/j7_r_i, /DR_Legs/Joints/j8_r_i, /DR_Legs/Joints/j9_r_i, /DR_Legs/Joints/j1_r_o, /DR_Legs/Joints/j2_r_o, /DR_Legs/Joints/j3_r_o, /DR_Legs/Joints/j4_r_o, /DR_Legs/Joints/j5_r_o, /DR_Legs/Joints/j6_r_o, /DR_Legs/Joints/j7_r_o, /DR_Legs/Joints/j8_r_o, /DR_Legs/Joints/j9_r_o]. Make sure your USD asset includes an articulation root prim with the PhysicsArticulationRootAPI.
+If you want to proceed with these orphan joints, make sure to call ModelBuilder.finalize(skip_validation_joints=True) to avoid raising a ValueError. Note that not all solvers will support such a configuration.
+  return parse_usd(
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.geometry.inertia 2e0efd6 load on device 'cuda:0' took 3.69 ms  (cached)
+Module validate_and_correct_inertia_kernel_a682b50c a682b50 load on device 'cuda:0' took 4.19 ms  (cached)
+Module newton._src.solvers.kamino._src.core.conversions c5498a2 load on device 'cuda:0' took 19.96 ms  (cached)
+Module newton._src.solvers.kamino._src.core.bodies 7f35ca5 load on device 'cuda:0' took 6.20 ms  (cached)
+Module newton._src.solvers.kamino._src.geometry.unified a630f1e load on device 'cuda:0' took 3.46 ms  (cached)
+Module newton._src.solvers.kamino._src.utils.world_equivalence 5490f3c load on device 'cuda:0' took 3.13 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.fk.kernels 9379285 load on device 'cuda:0' took 94.51 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.constraints 1c190a2 load on device 'cuda:0' took 3.61 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.jacobians 949ff53 load on device 'cuda:0' took 6.25 ms  (cached)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 4.84 ms  (cached)
+Module newton._src.solvers.kamino._src.geometry.contacts 5dc189e load on device 'cuda:0' took 2.69 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.joints 7527995 load on device 'cuda:0' took 3.94 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.limits 3157d9f load on device 'cuda:0' took 3.37 ms  (cached)
+Module newton._src.solvers.kamino._src.dynamics.wrenches 65b0010 load on device 'cuda:0' took 3.43 ms  (cached)
+Module newton._src.solvers.kamino._src.dynamics.delassus 38e708f load on device 'cuda:0' took 3.30 ms  (cached)
+Module newton._src.solvers.kamino._src.dynamics.dual fa0fa89 load on device 'cuda:0' took 2.98 ms  (cached)
+Module newton._src.solvers.kamino._src.geometry.keying b655b3e load on device 'cuda:0' took 2.13 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.warmstart 7444518 load on device 'cuda:0' took 2.73 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels 82e8723 load on device 'cuda:0' took 5.73 ms  (cached)
+Module newton._src.solvers.kamino._src.linalg.factorize.llt_blocked 8d4d103 load on device 'cuda:0' took 391.03 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels ef61502 load on device 'cuda:0' took 5.79 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels d8fea14 load on device 'cuda:0' took 6.31 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels 4be1e70 load on device 'cuda:0' took 6.95 ms  (cached)
+Module newton._src.solvers.kamino._src.integrators.euler d36eb8b load on device 'cuda:0' took 3.99 ms  (cached)
+Module newton._src.solvers.kamino._src.core.time bdcc507 load on device 'cuda:0' took 4.42 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.resets d26c318 load on device 'cuda:0' took 4.64 ms  (cached)
+Module newton._src.geometry.broad_phase_nxn 50d95f3 load on device 'cuda:0' took 3.52 ms  (cached)
+Module narrow_phase_primitive_write_contact_unified_kamino c159f57 load on device 'cuda:0' took 3.80 ms  (cached)
+Module narrow_phase_gjk_mpr_True_write_contact_unified_kamino_default_default 2bc66f0 load on device 'cuda:0' took 5.82 ms  (cached)
+Module newton._src.geometry.narrow_phase 677b8d2 load on device 'cuda:0' took 3.73 ms  (cached)
+Module newton._src.geometry.contact_reduction_global 1e557ea load on device 'cuda:0' took 2.57 ms  (cached)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 3.93 ms  (cached)
+Module newton._src.geometry.sdf_contact ad85f16 load on device 'cuda:0' took 2.28 ms  (cached)
+Module narrow_phase_mesh_plane_write_contact_to_reducer_True d064a77 load on device 'cuda:0' took 2.95 ms  (cached)
+Module mesh_triangle_contacts_to_reducer_kernel_06a2ef31 475a937 load on device 'cuda:0' took 7.15 ms  (cached)
+Module newton._src.geometry.contact_reduction_global 5c5decd load on device 'cuda:0' took 3.85 ms  (cached)
+Module sdf_contact_write_contact_to_reducer_False_True 392ea80 load on device 'cuda:0' took 4.09 ms  (cached)
+Module export_reduced_contacts_write_contact_unified_kamino 9596458 load on device 'cuda:0' took 3.10 ms  (cached)
+=== PHASE TIMING (s) :: kamino_robot_dr_legs ===
+  after_import              total=   3.53  delta=   3.53
+  after_viewer_ctor         total=   3.71  delta=   0.18
+  after_example_init        total=   7.62  delta=   3.91
+  after_step                total=   7.62  delta=   0.00
+  after_render              total=   7.62  delta=   0.00
+  end                       total=   7.62  delta=   0.00
+TOTAL: 7.62s
+===== iter=1 / cold / cloth_hanging =====
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.sim.graph_coloring abbbefd load on device 'cpu' took 1392.89 ms  (compiled)
+Module newton._src.solvers.vbd.particle_vbd_kernels 7e5d603 load on device 'cpu' took 2579.74 ms  (compiled)
+Module newton._src.geometry.kernels c2c1f56 load on device 'cuda:0' took 5163.15 ms  (compiled)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 3287.00 ms  (compiled)
+Module newton._src.sim.collide 426fb1c load on device 'cuda:0' took 996.06 ms  (compiled)
+Module narrow_phase_primitive_write_contact 74fb925 load on device 'cuda:0' took 2524.39 ms  (compiled)
+Module narrow_phase_gjk_mpr_True_write_contact_support_map_lean_post_process_minkowski_only 9f30990 load on device 'cuda:0' took 5832.30 ms  (compiled)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 1476.33 ms  (compiled)
+Module newton._src.solvers.vbd.rigid_vbd_kernels d72f88d load on device 'cuda:0' took 10525.03 ms  (compiled)
+Module newton._src.geometry.kernels 2993ff9 load on device 'cuda:0' took 5514.01 ms  (compiled)
+Module newton._src.solvers.vbd.particle_vbd_kernels e814db9 load on device 'cuda:0' took 5454.85 ms  (compiled)
+Module newton._src.solvers.vbd.particle_vbd_kernels ac82bf6 load on device 'cuda:0' took 5170.19 ms  (compiled)
+Module newton._src.viewer.kernels 77a557e load on device 'cuda:0' took 3264.03 ms  (compiled)
+Module newton._src.viewer.kernels 9430990 load on device 'cuda:0' took 3324.26 ms  (compiled)
+=== PHASE TIMING (s) :: cloth_hanging ===
+  after_import              total=   3.33  delta=   3.33
+  after_viewer_ctor         total=   3.54  delta=   0.21
+  after_example_init        total=  54.72  delta=  51.18
+  after_step                total=  54.73  delta=   0.01
+  after_render              total=  61.48  delta=   6.74
+  end                       total=  61.48  delta=   0.00
+TOTAL: 61.48s
+===== iter=1 / warm / cloth_hanging =====
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.sim.graph_coloring abbbefd load on device 'cpu' took 2.66 ms  (cached)
+Module newton._src.solvers.vbd.particle_vbd_kernels 7e5d603 load on device 'cpu' took 1.64 ms  (cached)
+Module newton._src.geometry.kernels c2c1f56 load on device 'cuda:0' took 7.74 ms  (cached)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 6.82 ms  (cached)
+Module newton._src.sim.collide 426fb1c load on device 'cuda:0' took 3.20 ms  (cached)
+Module narrow_phase_primitive_write_contact 74fb925 load on device 'cuda:0' took 4.16 ms  (cached)
+Module narrow_phase_gjk_mpr_True_write_contact_support_map_lean_post_process_minkowski_only 9f30990 load on device 'cuda:0' took 5.85 ms  (cached)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 13.38 ms  (cached)
+Module newton._src.solvers.vbd.rigid_vbd_kernels d72f88d load on device 'cuda:0' took 6.66 ms  (cached)
+Module newton._src.geometry.kernels 2993ff9 load on device 'cuda:0' took 5.38 ms  (cached)
+Module newton._src.solvers.vbd.particle_vbd_kernels e814db9 load on device 'cuda:0' took 5.88 ms  (cached)
+Module newton._src.solvers.vbd.particle_vbd_kernels ac82bf6 load on device 'cuda:0' took 5.84 ms  (cached)
+Module newton._src.viewer.kernels 77a557e load on device 'cuda:0' took 6.46 ms  (cached)
+Module newton._src.viewer.kernels 9430990 load on device 'cuda:0' took 4.73 ms  (cached)
+=== PHASE TIMING (s) :: cloth_hanging ===
+  after_import              total=   3.41  delta=   3.41
+  after_viewer_ctor         total=   3.58  delta=   0.18
+  after_example_init        total=   4.83  delta=   1.25
+  after_step                total=   4.85  delta=   0.02
+  after_render              total=   4.90  delta=   0.05
+  end                       total=   4.90  delta=   0.00
+TOTAL: 4.90s
+===== iter=1 / cold / robot_anymal_d =====
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.geometry.inertia 2e0efd6 load on device 'cuda:0' took 2668.17 ms  (compiled)
+Module validate_and_correct_inertia_kernel_a682b50c a682b50 load on device 'cuda:0' took 386.46 ms  (compiled)
+Module newton._src.sim.graph_coloring abbbefd load on device 'cpu' took 1431.00 ms  (compiled)
+Module newton._src.solvers.mujoco.kernels 88a820e load on device 'cuda:0' took 13353.41 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 ba87b84 load on device 'cuda:0' took 191.23 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 35db7c2 load on device 'cuda:0' took 219.73 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 a71dea8 load on device 'cuda:0' took 265.73 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 d77e5ce load on device 'cuda:0' took 269.94 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 d445762 load on device 'cuda:0' took 306.24 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 2b8831d load on device 'cuda:0' took 333.23 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 97a42c9 load on device 'cuda:0' took 397.52 ms  (compiled)
+Module mujoco_warp._src.io a2fd864 load on device 'cuda:0' took 3823.13 ms  (compiled)
+Module mujoco_warp._src.smooth 3f89f86 load on device 'cuda:0' took 5979.07 ms  (compiled)
+Module _tile_cholesky_factorize__locals__cholesky_factorize_763979fb 3443e72 load on device 'cuda:0' took 11906.61 ms  (compiled)
+Module _tile_cholesky_solve__locals__cholesky_solve_60e7f5b6 bacf277 load on device 'cuda:0' took 2570.83 ms  (compiled)
+Module newton._src.sim.articulation df004de load on device 'cuda:0' took 11075.56 ms  (compiled)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 3118.37 ms  (compiled)
+Module newton._src.sim.collide 426fb1c load on device 'cuda:0' took 931.64 ms  (compiled)
+Module newton._src.geometry.broad_phase_nxn 50d95f3 load on device 'cuda:0' took 344.23 ms  (compiled)
+Module narrow_phase_primitive_write_contact 74fb925 load on device 'cuda:0' took 2230.26 ms  (compiled)
+Module narrow_phase_gjk_mpr_True_write_contact_default_default a714c94 load on device 'cuda:0' took 9346.55 ms  (compiled)
+Module newton._src.geometry.narrow_phase 677b8d2 load on device 'cuda:0' took 1456.12 ms  (compiled)
+Module newton._src.geometry.contact_reduction_global 1e557ea load on device 'cuda:0' took 558.55 ms  (compiled)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 1353.28 ms  (compiled)
+Module newton._src.geometry.sdf_contact ad85f16 load on device 'cuda:0' took 263.87 ms  (compiled)
+Module narrow_phase_mesh_plane_write_contact_to_reducer_True d064a77 load on device 'cuda:0' took 684.79 ms  (compiled)
+Module mesh_triangle_contacts_to_reducer_kernel_06a2ef31 475a937 load on device 'cuda:0' took 9032.56 ms  (compiled)
+Module newton._src.geometry.contact_reduction_global 5c5decd load on device 'cuda:0' took 687.50 ms  (compiled)
+Module sdf_contact_write_contact_to_reducer_False_True 392ea80 load on device 'cuda:0' took 2854.13 ms  (compiled)
+Module export_reduced_contacts_write_contact 9fad287 load on device 'cuda:0' took 466.55 ms  (compiled)
+Module mujoco_warp._src.constraint be9a3cd load on device 'cuda:0' took 3489.95 ms  (compiled)
+Module _efc_contact_init__locals__kernel_454d55b8 454d55b load on device 'cuda:0' took 233.53 ms  (compiled)
+Module _efc_contact_jac_dense__locals__kernel_960e6eef ea79dbf load on device 'cuda:0' took 835.92 ms  (compiled)
+Module _efc_contact_update__locals__kernel_e18e31e4 e18e31e load on device 'cuda:0' took 356.26 ms  (compiled)
+Module mujoco_warp._src.forward eaba7d8 load on device 'cuda:0' took 2484.02 ms  (compiled)
+Module mujoco_warp._src.passive 4c3b23b load on device 'cuda:0' took 1579.37 ms  (compiled)
+Module mujoco_warp._src.forward 7911fea load on device 'cuda:0' took 1767.84 ms  (compiled)
+Module mujoco_warp._src.support 46793d4 load on device 'cuda:0' took 425.83 ms  (compiled)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_ef167f26 849b094 load on device 'cuda:0' took 4242.86 ms  (compiled)
+Module mujoco_warp._src.solver 15a35aa load on device 'cuda:0' took 1838.87 ms  (compiled)
+Module solve_init_jaref__locals__kernel_7b8c3d51 7b8c3d5 load on device 'cuda:0' took 265.42 ms  (compiled)
+Module mul_m_dense__locals___mul_m_dense_71af815b 71af815 load on device 'cuda:0' took 399.97 ms  (compiled)
+Module update_constraint_efc__locals__kernel_62653db3 62653db load on device 'cuda:0' took 308.37 ms  (compiled)
+Module update_constraint_gauss_cost__locals__kernel_0bc71de0 0bc71de load on device 'cuda:0' took 255.25 ms  (compiled)
+Module update_gradient_JTDAJ_dense_tiled__locals__kernel_6bb52772 e03431d load on device 'cuda:0' took 934.43 ms  (compiled)
+Module update_gradient_cholesky__locals__kernel_757084f1 4836c87 load on device 'cuda:0' took 12803.11 ms  (compiled)
+Module linesearch_iterative__locals__kernel_da7f24f7 789799c load on device 'cuda:0' took 1500.68 ms  (compiled)
+Module mujoco_warp._src.sensor 25449cd load on device 'cuda:0' took 6378.60 ms  (compiled)
+Module mujoco_warp._src.derivative 704aad8 load on device 'cuda:0' took 1093.74 ms  (compiled)
+=== PHASE TIMING (s) :: robot_anymal_d ===
+  after_import              total=   3.33  delta=   3.33
+  after_viewer_ctor         total=   3.58  delta=   0.25
+  after_example_init        total= 138.96  delta= 135.38
+  after_step                total= 138.96  delta=   0.00
+  after_render              total= 138.96  delta=   0.00
+  end                       total= 138.96  delta=   0.00
+TOTAL: 138.96s
+===== iter=1 / warm / robot_anymal_d =====
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.geometry.inertia 2e0efd6 load on device 'cuda:0' took 4.95 ms  (cached)
+Module validate_and_correct_inertia_kernel_a682b50c a682b50 load on device 'cuda:0' took 6.35 ms  (cached)
+Module newton._src.sim.graph_coloring abbbefd load on device 'cpu' took 2.51 ms  (cached)
+Module newton._src.solvers.mujoco.kernels 88a820e load on device 'cuda:0' took 23.40 ms  (cached)
+Module repeat_array_kernel_19a3fa57 ba87b84 load on device 'cuda:0' took 3.11 ms  (cached)
+Module repeat_array_kernel_19a3fa57 35db7c2 load on device 'cuda:0' took 2.73 ms  (cached)
+Module repeat_array_kernel_19a3fa57 a71dea8 load on device 'cuda:0' took 3.18 ms  (cached)
+Module repeat_array_kernel_19a3fa57 d77e5ce load on device 'cuda:0' took 3.40 ms  (cached)
+Module repeat_array_kernel_19a3fa57 d445762 load on device 'cuda:0' took 2.48 ms  (cached)
+Module repeat_array_kernel_19a3fa57 2b8831d load on device 'cuda:0' took 2.41 ms  (cached)
+Module repeat_array_kernel_19a3fa57 97a42c9 load on device 'cuda:0' took 3.47 ms  (cached)
+Module mujoco_warp._src.io a2fd864 load on device 'cuda:0' took 6.43 ms  (cached)
+Module mujoco_warp._src.smooth 3f89f86 load on device 'cuda:0' took 6.78 ms  (cached)
+Module _tile_cholesky_factorize__locals__cholesky_factorize_763979fb 3443e72 load on device 'cuda:0' took 197.66 ms  (cached)
+Module _tile_cholesky_solve__locals__cholesky_solve_60e7f5b6 bacf277 load on device 'cuda:0' took 54.20 ms  (cached)
+Module newton._src.sim.articulation df004de load on device 'cuda:0' took 10.40 ms  (cached)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 5.21 ms  (cached)
+Module newton._src.sim.collide 426fb1c load on device 'cuda:0' took 3.10 ms  (cached)
+Module newton._src.geometry.broad_phase_nxn 50d95f3 load on device 'cuda:0' took 2.99 ms  (cached)
+Module narrow_phase_primitive_write_contact 74fb925 load on device 'cuda:0' took 3.86 ms  (cached)
+Module narrow_phase_gjk_mpr_True_write_contact_default_default a714c94 load on device 'cuda:0' took 5.23 ms  (cached)
+Module newton._src.geometry.narrow_phase 677b8d2 load on device 'cuda:0' took 3.25 ms  (cached)
+Module newton._src.geometry.contact_reduction_global 1e557ea load on device 'cuda:0' took 2.58 ms  (cached)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 4.37 ms  (cached)
+Module newton._src.geometry.sdf_contact ad85f16 load on device 'cuda:0' took 2.37 ms  (cached)
+Module narrow_phase_mesh_plane_write_contact_to_reducer_True d064a77 load on device 'cuda:0' took 2.87 ms  (cached)
+Module mesh_triangle_contacts_to_reducer_kernel_06a2ef31 475a937 load on device 'cuda:0' took 5.77 ms  (cached)
+Module newton._src.geometry.contact_reduction_global 5c5decd load on device 'cuda:0' took 3.51 ms  (cached)
+Module sdf_contact_write_contact_to_reducer_False_True 392ea80 load on device 'cuda:0' took 4.07 ms  (cached)
+Module export_reduced_contacts_write_contact 9fad287 load on device 'cuda:0' took 2.59 ms  (cached)
+Module mujoco_warp._src.constraint be9a3cd load on device 'cuda:0' took 6.32 ms  (cached)
+Module _efc_contact_init__locals__kernel_454d55b8 454d55b load on device 'cuda:0' took 2.51 ms  (cached)
+Module _efc_contact_jac_dense__locals__kernel_960e6eef ea79dbf load on device 'cuda:0' took 2.57 ms  (cached)
+Module _efc_contact_update__locals__kernel_e18e31e4 e18e31e load on device 'cuda:0' took 3.87 ms  (cached)
+Module mujoco_warp._src.forward eaba7d8 load on device 'cuda:0' took 6.58 ms  (cached)
+Module mujoco_warp._src.passive 4c3b23b load on device 'cuda:0' took 7.00 ms  (cached)
+Module mujoco_warp._src.forward 7911fea load on device 'cuda:0' took 4.60 ms  (cached)
+Module mujoco_warp._src.support 46793d4 load on device 'cuda:0' took 3.65 ms  (cached)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_ef167f26 849b094 load on device 'cuda:0' took 272.36 ms  (cached)
+Module mujoco_warp._src.solver 15a35aa load on device 'cuda:0' took 4.49 ms  (cached)
+Module solve_init_jaref__locals__kernel_7b8c3d51 7b8c3d5 load on device 'cuda:0' took 2.44 ms  (cached)
+Module mul_m_dense__locals___mul_m_dense_71af815b 71af815 load on device 'cuda:0' took 5.29 ms  (cached)
+Module update_constraint_efc__locals__kernel_62653db3 62653db load on device 'cuda:0' took 2.79 ms  (cached)
+Module update_constraint_gauss_cost__locals__kernel_0bc71de0 0bc71de load on device 'cuda:0' took 2.83 ms  (cached)
+Module update_gradient_JTDAJ_dense_tiled__locals__kernel_6bb52772 e03431d load on device 'cuda:0' took 5.15 ms  (cached)
+Module update_gradient_cholesky__locals__kernel_757084f1 4836c87 load on device 'cuda:0' took 261.03 ms  (cached)
+Module linesearch_iterative__locals__kernel_da7f24f7 789799c load on device 'cuda:0' took 5.23 ms  (cached)
+Module mujoco_warp._src.sensor 25449cd load on device 'cuda:0' took 5.68 ms  (cached)
+Module mujoco_warp._src.derivative 704aad8 load on device 'cuda:0' took 4.09 ms  (cached)
+=== PHASE TIMING (s) :: robot_anymal_d ===
+  after_import              total=   3.35  delta=   3.35
+  after_viewer_ctor         total=   3.53  delta=   0.18
+  after_example_init        total=   7.27  delta=   3.74
+  after_step                total=   7.27  delta=   0.00
+  after_render              total=   7.27  delta=   0.00
+  end                       total=   7.27  delta=   0.00
+TOTAL: 7.27s
+########## ITER 2 / order: robot_anymal_d cloth_hanging kamino_robot_dr_legs ##########
+===== iter=2 / cold / robot_anymal_d =====
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.geometry.inertia 2e0efd6 load on device 'cuda:0' took 2609.87 ms  (compiled)
+Module validate_and_correct_inertia_kernel_a682b50c a682b50 load on device 'cuda:0' took 377.77 ms  (compiled)
+Module newton._src.sim.graph_coloring abbbefd load on device 'cpu' took 1369.75 ms  (compiled)
+Module newton._src.solvers.mujoco.kernels 88a820e load on device 'cuda:0' took 11877.07 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 ba87b84 load on device 'cuda:0' took 164.66 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 35db7c2 load on device 'cuda:0' took 194.30 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 a71dea8 load on device 'cuda:0' took 235.26 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 d77e5ce load on device 'cuda:0' took 266.35 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 d445762 load on device 'cuda:0' took 322.59 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 2b8831d load on device 'cuda:0' took 370.48 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 97a42c9 load on device 'cuda:0' took 396.04 ms  (compiled)
+Module mujoco_warp._src.io a2fd864 load on device 'cuda:0' took 3775.37 ms  (compiled)
+Module mujoco_warp._src.smooth 3f89f86 load on device 'cuda:0' took 6058.91 ms  (compiled)
+Module _tile_cholesky_factorize__locals__cholesky_factorize_763979fb 3443e72 load on device 'cuda:0' took 11613.53 ms  (compiled)
+Module _tile_cholesky_solve__locals__cholesky_solve_60e7f5b6 bacf277 load on device 'cuda:0' took 2589.27 ms  (compiled)
+Module newton._src.sim.articulation df004de load on device 'cuda:0' took 12542.68 ms  (compiled)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 3517.37 ms  (compiled)
+Module newton._src.sim.collide 426fb1c load on device 'cuda:0' took 952.04 ms  (compiled)
+Module newton._src.geometry.broad_phase_nxn 50d95f3 load on device 'cuda:0' took 347.08 ms  (compiled)
+Module narrow_phase_primitive_write_contact 74fb925 load on device 'cuda:0' took 2502.81 ms  (compiled)
+Module narrow_phase_gjk_mpr_True_write_contact_default_default a714c94 load on device 'cuda:0' took 10686.77 ms  (compiled)
+Module newton._src.geometry.narrow_phase 677b8d2 load on device 'cuda:0' took 1625.62 ms  (compiled)
+Module newton._src.geometry.contact_reduction_global 1e557ea load on device 'cuda:0' took 817.26 ms  (compiled)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 1589.09 ms  (compiled)
+Module newton._src.geometry.sdf_contact ad85f16 load on device 'cuda:0' took 274.51 ms  (compiled)
+Module narrow_phase_mesh_plane_write_contact_to_reducer_True d064a77 load on device 'cuda:0' took 670.06 ms  (compiled)
+Module mesh_triangle_contacts_to_reducer_kernel_06a2ef31 475a937 load on device 'cuda:0' took 9534.03 ms  (compiled)
+Module newton._src.geometry.contact_reduction_global 5c5decd load on device 'cuda:0' took 655.40 ms  (compiled)
+Module sdf_contact_write_contact_to_reducer_False_True 392ea80 load on device 'cuda:0' took 3014.46 ms  (compiled)
+Module export_reduced_contacts_write_contact 9fad287 load on device 'cuda:0' took 512.97 ms  (compiled)
+Module mujoco_warp._src.constraint be9a3cd load on device 'cuda:0' took 3658.05 ms  (compiled)
+Module _efc_contact_init__locals__kernel_454d55b8 454d55b load on device 'cuda:0' took 257.23 ms  (compiled)
+Module _efc_contact_jac_dense__locals__kernel_960e6eef ea79dbf load on device 'cuda:0' took 958.06 ms  (compiled)
+Module _efc_contact_update__locals__kernel_e18e31e4 e18e31e load on device 'cuda:0' took 410.70 ms  (compiled)
+Module mujoco_warp._src.forward eaba7d8 load on device 'cuda:0' took 1958.48 ms  (compiled)
+Module mujoco_warp._src.passive 4c3b23b load on device 'cuda:0' took 1856.95 ms  (compiled)
+Module mujoco_warp._src.forward 7911fea load on device 'cuda:0' took 1926.57 ms  (compiled)
+Module mujoco_warp._src.support 46793d4 load on device 'cuda:0' took 437.50 ms  (compiled)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_ef167f26 849b094 load on device 'cuda:0' took 4514.10 ms  (compiled)
+Module mujoco_warp._src.solver 15a35aa load on device 'cuda:0' took 2104.55 ms  (compiled)
+Module solve_init_jaref__locals__kernel_7b8c3d51 7b8c3d5 load on device 'cuda:0' took 227.02 ms  (compiled)
+Module mul_m_dense__locals___mul_m_dense_71af815b 71af815 load on device 'cuda:0' took 436.63 ms  (compiled)
+Module update_constraint_efc__locals__kernel_62653db3 62653db load on device 'cuda:0' took 356.62 ms  (compiled)
+Module update_constraint_gauss_cost__locals__kernel_0bc71de0 0bc71de load on device 'cuda:0' took 238.50 ms  (compiled)
+Module update_gradient_JTDAJ_dense_tiled__locals__kernel_6bb52772 e03431d load on device 'cuda:0' took 1027.51 ms  (compiled)
+Module update_gradient_cholesky__locals__kernel_757084f1 4836c87 load on device 'cuda:0' took 14025.47 ms  (compiled)
+Module linesearch_iterative__locals__kernel_da7f24f7 789799c load on device 'cuda:0' took 1612.90 ms  (compiled)
+Module mujoco_warp._src.sensor 25449cd load on device 'cuda:0' took 6869.07 ms  (compiled)
+Module mujoco_warp._src.derivative 704aad8 load on device 'cuda:0' took 1146.40 ms  (compiled)
+=== PHASE TIMING (s) :: robot_anymal_d ===
+  after_import              total=   3.34  delta=   3.34
+  after_viewer_ctor         total=   3.53  delta=   0.19
+  after_example_init        total= 141.80  delta= 138.27
+  after_step                total= 141.80  delta=   0.00
+  after_render              total= 141.80  delta=   0.00
+  end                       total= 141.80  delta=   0.00
+TOTAL: 141.80s
+===== iter=2 / warm / robot_anymal_d =====
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.geometry.inertia 2e0efd6 load on device 'cuda:0' took 5.22 ms  (cached)
+Module validate_and_correct_inertia_kernel_a682b50c a682b50 load on device 'cuda:0' took 3.70 ms  (cached)
+Module newton._src.sim.graph_coloring abbbefd load on device 'cpu' took 2.79 ms  (cached)
+Module newton._src.solvers.mujoco.kernels 88a820e load on device 'cuda:0' took 12.65 ms  (cached)
+Module repeat_array_kernel_19a3fa57 ba87b84 load on device 'cuda:0' took 2.97 ms  (cached)
+Module repeat_array_kernel_19a3fa57 35db7c2 load on device 'cuda:0' took 3.07 ms  (cached)
+Module repeat_array_kernel_19a3fa57 a71dea8 load on device 'cuda:0' took 2.43 ms  (cached)
+Module repeat_array_kernel_19a3fa57 d77e5ce load on device 'cuda:0' took 3.25 ms  (cached)
+Module repeat_array_kernel_19a3fa57 d445762 load on device 'cuda:0' took 3.12 ms  (cached)
+Module repeat_array_kernel_19a3fa57 2b8831d load on device 'cuda:0' took 2.63 ms  (cached)
+Module repeat_array_kernel_19a3fa57 97a42c9 load on device 'cuda:0' took 2.75 ms  (cached)
+Module mujoco_warp._src.io a2fd864 load on device 'cuda:0' took 6.77 ms  (cached)
+Module mujoco_warp._src.smooth 3f89f86 load on device 'cuda:0' took 6.71 ms  (cached)
+Module _tile_cholesky_factorize__locals__cholesky_factorize_763979fb 3443e72 load on device 'cuda:0' took 178.74 ms  (cached)
+Module _tile_cholesky_solve__locals__cholesky_solve_60e7f5b6 bacf277 load on device 'cuda:0' took 56.69 ms  (cached)
+Module newton._src.sim.articulation df004de load on device 'cuda:0' took 9.06 ms  (cached)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 5.46 ms  (cached)
+Module newton._src.sim.collide 426fb1c load on device 'cuda:0' took 3.97 ms  (cached)
+Module newton._src.geometry.broad_phase_nxn 50d95f3 load on device 'cuda:0' took 2.35 ms  (cached)
+Module narrow_phase_primitive_write_contact 74fb925 load on device 'cuda:0' took 3.68 ms  (cached)
+Module narrow_phase_gjk_mpr_True_write_contact_default_default a714c94 load on device 'cuda:0' took 6.29 ms  (cached)
+Module newton._src.geometry.narrow_phase 677b8d2 load on device 'cuda:0' took 4.65 ms  (cached)
+Module newton._src.geometry.contact_reduction_global 1e557ea load on device 'cuda:0' took 3.75 ms  (cached)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 4.92 ms  (cached)
+Module newton._src.geometry.sdf_contact ad85f16 load on device 'cuda:0' took 3.44 ms  (cached)
+Module narrow_phase_mesh_plane_write_contact_to_reducer_True d064a77 load on device 'cuda:0' took 3.41 ms  (cached)
+Module mesh_triangle_contacts_to_reducer_kernel_06a2ef31 475a937 load on device 'cuda:0' took 5.94 ms  (cached)
+Module newton._src.geometry.contact_reduction_global 5c5decd load on device 'cuda:0' took 3.69 ms  (cached)
+Module sdf_contact_write_contact_to_reducer_False_True 392ea80 load on device 'cuda:0' took 4.67 ms  (cached)
+Module export_reduced_contacts_write_contact 9fad287 load on device 'cuda:0' took 3.55 ms  (cached)
+Module mujoco_warp._src.constraint be9a3cd load on device 'cuda:0' took 5.64 ms  (cached)
+Module _efc_contact_init__locals__kernel_454d55b8 454d55b load on device 'cuda:0' took 3.90 ms  (cached)
+Module _efc_contact_jac_dense__locals__kernel_960e6eef ea79dbf load on device 'cuda:0' took 5.03 ms  (cached)
+Module _efc_contact_update__locals__kernel_e18e31e4 e18e31e load on device 'cuda:0' took 4.82 ms  (cached)
+Module mujoco_warp._src.forward eaba7d8 load on device 'cuda:0' took 4.89 ms  (cached)
+Module mujoco_warp._src.passive 4c3b23b load on device 'cuda:0' took 4.37 ms  (cached)
+Module mujoco_warp._src.forward 7911fea load on device 'cuda:0' took 5.13 ms  (cached)
+Module mujoco_warp._src.support 46793d4 load on device 'cuda:0' took 2.84 ms  (cached)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_ef167f26 849b094 load on device 'cuda:0' took 230.32 ms  (cached)
+Module mujoco_warp._src.solver 15a35aa load on device 'cuda:0' took 5.13 ms  (cached)
+Module solve_init_jaref__locals__kernel_7b8c3d51 7b8c3d5 load on device 'cuda:0' took 3.70 ms  (cached)
+Module mul_m_dense__locals___mul_m_dense_71af815b 71af815 load on device 'cuda:0' took 3.32 ms  (cached)
+Module update_constraint_efc__locals__kernel_62653db3 62653db load on device 'cuda:0' took 2.56 ms  (cached)
+Module update_constraint_gauss_cost__locals__kernel_0bc71de0 0bc71de load on device 'cuda:0' took 3.07 ms  (cached)
+Module update_gradient_JTDAJ_dense_tiled__locals__kernel_6bb52772 e03431d load on device 'cuda:0' took 5.10 ms  (cached)
+Module update_gradient_cholesky__locals__kernel_757084f1 4836c87 load on device 'cuda:0' took 223.10 ms  (cached)
+Module linesearch_iterative__locals__kernel_da7f24f7 789799c load on device 'cuda:0' took 5.04 ms  (cached)
+Module mujoco_warp._src.sensor 25449cd load on device 'cuda:0' took 10.43 ms  (cached)
+Module mujoco_warp._src.derivative 704aad8 load on device 'cuda:0' took 5.06 ms  (cached)
+=== PHASE TIMING (s) :: robot_anymal_d ===
+  after_import              total=   3.48  delta=   3.48
+  after_viewer_ctor         total=   3.73  delta=   0.25
+  after_example_init        total=   7.55  delta=   3.82
+  after_step                total=   7.55  delta=   0.00
+  after_render              total=   7.55  delta=   0.00
+  end                       total=   7.55  delta=   0.00
+TOTAL: 7.55s
+===== iter=2 / cold / cloth_hanging =====
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.sim.graph_coloring abbbefd load on device 'cpu' took 1443.68 ms  (compiled)
+Module newton._src.solvers.vbd.particle_vbd_kernels 7e5d603 load on device 'cpu' took 2832.28 ms  (compiled)
+Module newton._src.geometry.kernels c2c1f56 load on device 'cuda:0' took 5558.42 ms  (compiled)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 3417.86 ms  (compiled)
+Module newton._src.sim.collide 426fb1c load on device 'cuda:0' took 961.74 ms  (compiled)
+Module narrow_phase_primitive_write_contact 74fb925 load on device 'cuda:0' took 2517.90 ms  (compiled)
+Module narrow_phase_gjk_mpr_True_write_contact_support_map_lean_post_process_minkowski_only 9f30990 load on device 'cuda:0' took 5791.42 ms  (compiled)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 1492.73 ms  (compiled)
+Module newton._src.solvers.vbd.rigid_vbd_kernels d72f88d load on device 'cuda:0' took 11228.60 ms  (compiled)
+Module newton._src.geometry.kernels 2993ff9 load on device 'cuda:0' took 5719.04 ms  (compiled)
+Module newton._src.solvers.vbd.particle_vbd_kernels e814db9 load on device 'cuda:0' took 5630.22 ms  (compiled)
+Module newton._src.solvers.vbd.particle_vbd_kernels ac82bf6 load on device 'cuda:0' took 5577.31 ms  (compiled)
+Module newton._src.viewer.kernels 77a557e load on device 'cuda:0' took 3605.74 ms  (compiled)
+Module newton._src.viewer.kernels 9430990 load on device 'cuda:0' took 3855.58 ms  (compiled)
+=== PHASE TIMING (s) :: cloth_hanging ===
+  after_import              total=   3.43  delta=   3.43
+  after_viewer_ctor         total=   3.63  delta=   0.20
+  after_example_init        total=  57.02  delta=  53.39
+  after_step                total=  57.04  delta=   0.02
+  after_render              total=  64.66  delta=   7.63
+  end                       total=  64.66  delta=   0.00
+TOTAL: 64.66s
+===== iter=2 / warm / cloth_hanging =====
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.sim.graph_coloring abbbefd load on device 'cpu' took 3.09 ms  (cached)
+Module newton._src.solvers.vbd.particle_vbd_kernels 7e5d603 load on device 'cpu' took 1.86 ms  (cached)
+Module newton._src.geometry.kernels c2c1f56 load on device 'cuda:0' took 6.24 ms  (cached)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 5.53 ms  (cached)
+Module newton._src.sim.collide 426fb1c load on device 'cuda:0' took 3.43 ms  (cached)
+Module narrow_phase_primitive_write_contact 74fb925 load on device 'cuda:0' took 3.85 ms  (cached)
+Module narrow_phase_gjk_mpr_True_write_contact_support_map_lean_post_process_minkowski_only 9f30990 load on device 'cuda:0' took 4.94 ms  (cached)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 11.65 ms  (cached)
+Module newton._src.solvers.vbd.rigid_vbd_kernels d72f88d load on device 'cuda:0' took 7.58 ms  (cached)
+Module newton._src.geometry.kernels 2993ff9 load on device 'cuda:0' took 6.52 ms  (cached)
+Module newton._src.solvers.vbd.particle_vbd_kernels e814db9 load on device 'cuda:0' took 6.89 ms  (cached)
+Module newton._src.solvers.vbd.particle_vbd_kernels ac82bf6 load on device 'cuda:0' took 7.17 ms  (cached)
+Module newton._src.viewer.kernels 77a557e load on device 'cuda:0' took 5.40 ms  (cached)
+Module newton._src.viewer.kernels 9430990 load on device 'cuda:0' took 6.54 ms  (cached)
+=== PHASE TIMING (s) :: cloth_hanging ===
+  after_import              total=   3.46  delta=   3.46
+  after_viewer_ctor         total=   3.68  delta=   0.22
+  after_example_init        total=   4.88  delta=   1.20
+  after_step                total=   4.89  delta=   0.01
+  after_render              total=   4.94  delta=   0.05
+  end                       total=   4.94  delta=   0.00
+TOTAL: 4.94s
+===== iter=2 / cold / kamino_robot_dr_legs =====
+C:\Users\mmohajerani\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\newton\_src\sim\builder.py:2601: UserWarning: No articulation was found but 36 joints were parsed: [/DR_Legs/Joints/j1_l_i, /DR_Legs/Joints/j2_l_i, /DR_Legs/Joints/j3_l_i, /DR_Legs/Joints/j4_l_i, /DR_Legs/Joints/j5_l_i, /DR_Legs/Joints/j6_l_i, /DR_Legs/Joints/j7_l_i, /DR_Legs/Joints/j8_l_i, /DR_Legs/Joints/j9_l_i, /DR_Legs/Joints/j1_l_o, /DR_Legs/Joints/j2_l_o, /DR_Legs/Joints/j3_l_o, /DR_Legs/Joints/j4_l_o, /DR_Legs/Joints/j5_l_o, /DR_Legs/Joints/j6_l_o, /DR_Legs/Joints/j7_l_o, /DR_Legs/Joints/j8_l_o, /DR_Legs/Joints/j9_l_o, /DR_Legs/Joints/j1_r_i, /DR_Legs/Joints/j2_r_i, /DR_Legs/Joints/j3_r_i, /DR_Legs/Joints/j4_r_i, /DR_Legs/Joints/j5_r_i, /DR_Legs/Joints/j6_r_i, /DR_Legs/Joints/j7_r_i, /DR_Legs/Joints/j8_r_i, /DR_Legs/Joints/j9_r_i, /DR_Legs/Joints/j1_r_o, /DR_Legs/Joints/j2_r_o, /DR_Legs/Joints/j3_r_o, /DR_Legs/Joints/j4_r_o, /DR_Legs/Joints/j5_r_o, /DR_Legs/Joints/j6_r_o, /DR_Legs/Joints/j7_r_o, /DR_Legs/Joints/j8_r_o, /DR_Legs/Joints/j9_r_o]. Make sure your USD asset includes an articulation root prim with the PhysicsArticulationRootAPI.
+If you want to proceed with these orphan joints, make sure to call ModelBuilder.finalize(skip_validation_joints=True) to avoid raising a ValueError. Note that not all solvers will support such a configuration.
+  return parse_usd(
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.geometry.inertia 2e0efd6 load on device 'cuda:0' took 2695.11 ms  (compiled)
+Module validate_and_correct_inertia_kernel_a682b50c a682b50 load on device 'cuda:0' took 387.05 ms  (compiled)
+Module newton._src.solvers.kamino._src.core.conversions c5498a2 load on device 'cuda:0' took 4849.72 ms  (compiled)
+Module newton._src.solvers.kamino._src.core.bodies 7f35ca5 load on device 'cuda:0' took 512.55 ms  (compiled)
+Module newton._src.solvers.kamino._src.geometry.unified a630f1e load on device 'cuda:0' took 997.90 ms  (compiled)
+Module newton._src.solvers.kamino._src.utils.world_equivalence 5490f3c load on device 'cuda:0' took 297.52 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.fk.kernels 9379285 load on device 'cuda:0' took 17569.66 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.constraints 1c190a2 load on device 'cuda:0' took 416.06 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.jacobians 949ff53 load on device 'cuda:0' took 4553.56 ms  (compiled)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 3431.05 ms  (compiled)
+Module newton._src.solvers.kamino._src.geometry.contacts 5dc189e load on device 'cuda:0' took 485.86 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.joints 7527995 load on device 'cuda:0' took 1333.85 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.limits 3157d9f load on device 'cuda:0' took 648.64 ms  (compiled)
+Module newton._src.solvers.kamino._src.dynamics.wrenches 65b0010 load on device 'cuda:0' took 925.06 ms  (compiled)
+Module newton._src.solvers.kamino._src.dynamics.delassus 38e708f load on device 'cuda:0' took 805.51 ms  (compiled)
+Module newton._src.solvers.kamino._src.dynamics.dual fa0fa89 load on device 'cuda:0' took 1019.72 ms  (compiled)
+Module newton._src.solvers.kamino._src.geometry.keying b655b3e load on device 'cuda:0' took 207.70 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.warmstart 7444518 load on device 'cuda:0' took 1043.60 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels 82e8723 load on device 'cuda:0' took 2927.96 ms  (compiled)
+Module newton._src.solvers.kamino._src.linalg.factorize.llt_blocked 8d4d103 load on device 'cuda:0' took 34075.35 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels ef61502 load on device 'cuda:0' took 3099.57 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels d8fea14 load on device 'cuda:0' took 3818.84 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels 4be1e70 load on device 'cuda:0' took 3507.83 ms  (compiled)
+Module newton._src.solvers.kamino._src.integrators.euler d36eb8b load on device 'cuda:0' took 382.88 ms  (compiled)
+Module newton._src.solvers.kamino._src.core.time bdcc507 load on device 'cuda:0' took 186.13 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.resets d26c318 load on device 'cuda:0' took 1772.46 ms  (compiled)
+Module newton._src.geometry.broad_phase_nxn 50d95f3 load on device 'cuda:0' took 312.11 ms  (compiled)
+Module narrow_phase_primitive_write_contact_unified_kamino c159f57 load on device 'cuda:0' took 2723.48 ms  (compiled)
+Module narrow_phase_gjk_mpr_True_write_contact_unified_kamino_default_default 2bc66f0 load on device 'cuda:0' took 10253.00 ms  (compiled)
+Module newton._src.geometry.narrow_phase 677b8d2 load on device 'cuda:0' took 1550.74 ms  (compiled)
+Module newton._src.geometry.contact_reduction_global 1e557ea load on device 'cuda:0' took 666.54 ms  (compiled)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 1518.18 ms  (compiled)
+Module newton._src.geometry.sdf_contact ad85f16 load on device 'cuda:0' took 311.22 ms  (compiled)
+Module narrow_phase_mesh_plane_write_contact_to_reducer_True d064a77 load on device 'cuda:0' took 612.20 ms  (compiled)
+Module mesh_triangle_contacts_to_reducer_kernel_06a2ef31 475a937 load on device 'cuda:0' took 9322.60 ms  (compiled)
+Module newton._src.geometry.contact_reduction_global 5c5decd load on device 'cuda:0' took 668.15 ms  (compiled)
+Module sdf_contact_write_contact_to_reducer_False_True 392ea80 load on device 'cuda:0' took 2915.26 ms  (compiled)
+Module export_reduced_contacts_write_contact_unified_kamino 9596458 load on device 'cuda:0' took 459.53 ms  (compiled)
+=== PHASE TIMING (s) :: kamino_robot_dr_legs ===
+  after_import              total=   3.29  delta=   3.29
+  after_viewer_ctor         total=   3.47  delta=   0.18
+  after_example_init        total= 130.25  delta= 126.78
+  after_step                total= 130.26  delta=   0.00
+  after_render              total= 130.26  delta=   0.00
+  end                       total= 130.26  delta=   0.00
+TOTAL: 130.26s
+===== iter=2 / warm / kamino_robot_dr_legs =====
+C:\Users\mmohajerani\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\newton\_src\sim\builder.py:2601: UserWarning: No articulation was found but 36 joints were parsed: [/DR_Legs/Joints/j1_l_i, /DR_Legs/Joints/j2_l_i, /DR_Legs/Joints/j3_l_i, /DR_Legs/Joints/j4_l_i, /DR_Legs/Joints/j5_l_i, /DR_Legs/Joints/j6_l_i, /DR_Legs/Joints/j7_l_i, /DR_Legs/Joints/j8_l_i, /DR_Legs/Joints/j9_l_i, /DR_Legs/Joints/j1_l_o, /DR_Legs/Joints/j2_l_o, /DR_Legs/Joints/j3_l_o, /DR_Legs/Joints/j4_l_o, /DR_Legs/Joints/j5_l_o, /DR_Legs/Joints/j6_l_o, /DR_Legs/Joints/j7_l_o, /DR_Legs/Joints/j8_l_o, /DR_Legs/Joints/j9_l_o, /DR_Legs/Joints/j1_r_i, /DR_Legs/Joints/j2_r_i, /DR_Legs/Joints/j3_r_i, /DR_Legs/Joints/j4_r_i, /DR_Legs/Joints/j5_r_i, /DR_Legs/Joints/j6_r_i, /DR_Legs/Joints/j7_r_i, /DR_Legs/Joints/j8_r_i, /DR_Legs/Joints/j9_r_i, /DR_Legs/Joints/j1_r_o, /DR_Legs/Joints/j2_r_o, /DR_Legs/Joints/j3_r_o, /DR_Legs/Joints/j4_r_o, /DR_Legs/Joints/j5_r_o, /DR_Legs/Joints/j6_r_o, /DR_Legs/Joints/j7_r_o, /DR_Legs/Joints/j8_r_o, /DR_Legs/Joints/j9_r_o]. Make sure your USD asset includes an articulation root prim with the PhysicsArticulationRootAPI.
+If you want to proceed with these orphan joints, make sure to call ModelBuilder.finalize(skip_validation_joints=True) to avoid raising a ValueError. Note that not all solvers will support such a configuration.
+  return parse_usd(
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.geometry.inertia 2e0efd6 load on device 'cuda:0' took 4.40 ms  (cached)
+Module validate_and_correct_inertia_kernel_a682b50c a682b50 load on device 'cuda:0' took 3.54 ms  (cached)
+Module newton._src.solvers.kamino._src.core.conversions c5498a2 load on device 'cuda:0' took 14.93 ms  (cached)
+Module newton._src.solvers.kamino._src.core.bodies 7f35ca5 load on device 'cuda:0' took 3.50 ms  (cached)
+Module newton._src.solvers.kamino._src.geometry.unified a630f1e load on device 'cuda:0' took 4.32 ms  (cached)
+Module newton._src.solvers.kamino._src.utils.world_equivalence 5490f3c load on device 'cuda:0' took 3.27 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.fk.kernels 9379285 load on device 'cuda:0' took 92.91 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.constraints 1c190a2 load on device 'cuda:0' took 3.32 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.jacobians 949ff53 load on device 'cuda:0' took 5.65 ms  (cached)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 5.23 ms  (cached)
+Module newton._src.solvers.kamino._src.geometry.contacts 5dc189e load on device 'cuda:0' took 3.76 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.joints 7527995 load on device 'cuda:0' took 6.92 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.limits 3157d9f load on device 'cuda:0' took 6.50 ms  (cached)
+Module newton._src.solvers.kamino._src.dynamics.wrenches 65b0010 load on device 'cuda:0' took 6.29 ms  (cached)
+Module newton._src.solvers.kamino._src.dynamics.delassus 38e708f load on device 'cuda:0' took 6.89 ms  (cached)
+Module newton._src.solvers.kamino._src.dynamics.dual fa0fa89 load on device 'cuda:0' took 7.07 ms  (cached)
+Module newton._src.solvers.kamino._src.geometry.keying b655b3e load on device 'cuda:0' took 3.98 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.warmstart 7444518 load on device 'cuda:0' took 8.01 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels 82e8723 load on device 'cuda:0' took 6.44 ms  (cached)
+Module newton._src.solvers.kamino._src.linalg.factorize.llt_blocked 8d4d103 load on device 'cuda:0' took 383.32 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels ef61502 load on device 'cuda:0' took 6.15 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels d8fea14 load on device 'cuda:0' took 9.35 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels 4be1e70 load on device 'cuda:0' took 6.28 ms  (cached)
+Module newton._src.solvers.kamino._src.integrators.euler d36eb8b load on device 'cuda:0' took 2.88 ms  (cached)
+Module newton._src.solvers.kamino._src.core.time bdcc507 load on device 'cuda:0' took 3.58 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.resets d26c318 load on device 'cuda:0' took 4.19 ms  (cached)
+Module newton._src.geometry.broad_phase_nxn 50d95f3 load on device 'cuda:0' took 4.84 ms  (cached)
+Module narrow_phase_primitive_write_contact_unified_kamino c159f57 load on device 'cuda:0' took 4.26 ms  (cached)
+Module narrow_phase_gjk_mpr_True_write_contact_unified_kamino_default_default 2bc66f0 load on device 'cuda:0' took 5.61 ms  (cached)
+Module newton._src.geometry.narrow_phase 677b8d2 load on device 'cuda:0' took 4.71 ms  (cached)
+Module newton._src.geometry.contact_reduction_global 1e557ea load on device 'cuda:0' took 3.66 ms  (cached)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 4.17 ms  (cached)
+Module newton._src.geometry.sdf_contact ad85f16 load on device 'cuda:0' took 3.09 ms  (cached)
+Module narrow_phase_mesh_plane_write_contact_to_reducer_True d064a77 load on device 'cuda:0' took 2.79 ms  (cached)
+Module mesh_triangle_contacts_to_reducer_kernel_06a2ef31 475a937 load on device 'cuda:0' took 5.32 ms  (cached)
+Module newton._src.geometry.contact_reduction_global 5c5decd load on device 'cuda:0' took 3.06 ms  (cached)
+Module sdf_contact_write_contact_to_reducer_False_True 392ea80 load on device 'cuda:0' took 4.26 ms  (cached)
+Module export_reduced_contacts_write_contact_unified_kamino 9596458 load on device 'cuda:0' took 2.83 ms  (cached)
+=== PHASE TIMING (s) :: kamino_robot_dr_legs ===
+  after_import              total=   3.36  delta=   3.36
+  after_viewer_ctor         total=   3.55  delta=   0.18
+  after_example_init        total=   7.55  delta=   4.01
+  after_step                total=   7.56  delta=   0.00
+  after_render              total=   7.56  delta=   0.00
+  end                       total=   7.56  delta=   0.00
+TOTAL: 7.56s
+########## ITER 3 / order: robot_anymal_d kamino_robot_dr_legs cloth_hanging ##########
+===== iter=3 / cold / robot_anymal_d =====
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.geometry.inertia 2e0efd6 load on device 'cuda:0' took 2586.31 ms  (compiled)
+Module validate_and_correct_inertia_kernel_a682b50c a682b50 load on device 'cuda:0' took 366.17 ms  (compiled)
+Module newton._src.sim.graph_coloring abbbefd load on device 'cpu' took 1411.83 ms  (compiled)
+Module newton._src.solvers.mujoco.kernels 88a820e load on device 'cuda:0' took 12146.60 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 ba87b84 load on device 'cuda:0' took 150.07 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 35db7c2 load on device 'cuda:0' took 214.12 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 a71dea8 load on device 'cuda:0' took 239.90 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 d77e5ce load on device 'cuda:0' took 264.03 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 d445762 load on device 'cuda:0' took 338.19 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 2b8831d load on device 'cuda:0' took 367.84 ms  (compiled)
+Module repeat_array_kernel_19a3fa57 97a42c9 load on device 'cuda:0' took 409.87 ms  (compiled)
+Module mujoco_warp._src.io a2fd864 load on device 'cuda:0' took 3738.87 ms  (compiled)
+Module mujoco_warp._src.smooth 3f89f86 load on device 'cuda:0' took 6108.47 ms  (compiled)
+Module _tile_cholesky_factorize__locals__cholesky_factorize_763979fb 3443e72 load on device 'cuda:0' took 11473.77 ms  (compiled)
+Module _tile_cholesky_solve__locals__cholesky_solve_60e7f5b6 bacf277 load on device 'cuda:0' took 2599.22 ms  (compiled)
+Module newton._src.sim.articulation df004de load on device 'cuda:0' took 11219.25 ms  (compiled)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 3197.41 ms  (compiled)
+Module newton._src.sim.collide 426fb1c load on device 'cuda:0' took 900.45 ms  (compiled)
+Module newton._src.geometry.broad_phase_nxn 50d95f3 load on device 'cuda:0' took 334.05 ms  (compiled)
+Module narrow_phase_primitive_write_contact 74fb925 load on device 'cuda:0' took 2398.28 ms  (compiled)
+Module narrow_phase_gjk_mpr_True_write_contact_default_default a714c94 load on device 'cuda:0' took 9608.34 ms  (compiled)
+Module newton._src.geometry.narrow_phase 677b8d2 load on device 'cuda:0' took 1473.21 ms  (compiled)
+Module newton._src.geometry.contact_reduction_global 1e557ea load on device 'cuda:0' took 615.17 ms  (compiled)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 1492.69 ms  (compiled)
+Module newton._src.geometry.sdf_contact ad85f16 load on device 'cuda:0' took 247.46 ms  (compiled)
+Module narrow_phase_mesh_plane_write_contact_to_reducer_True d064a77 load on device 'cuda:0' took 626.26 ms  (compiled)
+Module mesh_triangle_contacts_to_reducer_kernel_06a2ef31 475a937 load on device 'cuda:0' took 9888.99 ms  (compiled)
+Module newton._src.geometry.contact_reduction_global 5c5decd load on device 'cuda:0' took 653.89 ms  (compiled)
+Module sdf_contact_write_contact_to_reducer_False_True 392ea80 load on device 'cuda:0' took 2771.09 ms  (compiled)
+Module export_reduced_contacts_write_contact 9fad287 load on device 'cuda:0' took 426.10 ms  (compiled)
+Module mujoco_warp._src.constraint be9a3cd load on device 'cuda:0' took 3882.13 ms  (compiled)
+Module _efc_contact_init__locals__kernel_454d55b8 454d55b load on device 'cuda:0' took 234.03 ms  (compiled)
+Module _efc_contact_jac_dense__locals__kernel_960e6eef ea79dbf load on device 'cuda:0' took 958.42 ms  (compiled)
+Module _efc_contact_update__locals__kernel_e18e31e4 e18e31e load on device 'cuda:0' took 401.20 ms  (compiled)
+Module mujoco_warp._src.forward eaba7d8 load on device 'cuda:0' took 1926.84 ms  (compiled)
+Module mujoco_warp._src.passive 4c3b23b load on device 'cuda:0' took 1685.43 ms  (compiled)
+Module mujoco_warp._src.forward 7911fea load on device 'cuda:0' took 1966.01 ms  (compiled)
+Module mujoco_warp._src.support 46793d4 load on device 'cuda:0' took 448.71 ms  (compiled)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_ef167f26 849b094 load on device 'cuda:0' took 4379.25 ms  (compiled)
+Module mujoco_warp._src.solver 15a35aa load on device 'cuda:0' took 1961.10 ms  (compiled)
+Module solve_init_jaref__locals__kernel_7b8c3d51 7b8c3d5 load on device 'cuda:0' took 202.70 ms  (compiled)
+Module mul_m_dense__locals___mul_m_dense_71af815b 71af815 load on device 'cuda:0' took 415.73 ms  (compiled)
+Module update_constraint_efc__locals__kernel_62653db3 62653db load on device 'cuda:0' took 326.64 ms  (compiled)
+Module update_constraint_gauss_cost__locals__kernel_0bc71de0 0bc71de load on device 'cuda:0' took 265.62 ms  (compiled)
+Module update_gradient_JTDAJ_dense_tiled__locals__kernel_6bb52772 e03431d load on device 'cuda:0' took 967.15 ms  (compiled)
+Module update_gradient_cholesky__locals__kernel_757084f1 4836c87 load on device 'cuda:0' took 13091.28 ms  (compiled)
+Module linesearch_iterative__locals__kernel_da7f24f7 789799c load on device 'cuda:0' took 1559.03 ms  (compiled)
+Module mujoco_warp._src.sensor 25449cd load on device 'cuda:0' took 6633.07 ms  (compiled)
+Module mujoco_warp._src.derivative 704aad8 load on device 'cuda:0' took 1130.26 ms  (compiled)
+=== PHASE TIMING (s) :: robot_anymal_d ===
+  after_import              total=   3.33  delta=   3.33
+  after_viewer_ctor         total=   3.53  delta=   0.20
+  after_example_init        total= 137.08  delta= 133.55
+  after_step                total= 137.09  delta=   0.00
+  after_render              total= 137.09  delta=   0.00
+  end                       total= 137.09  delta=   0.00
+TOTAL: 137.09s
+===== iter=3 / warm / robot_anymal_d =====
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.geometry.inertia 2e0efd6 load on device 'cuda:0' took 4.45 ms  (cached)
+Module validate_and_correct_inertia_kernel_a682b50c a682b50 load on device 'cuda:0' took 4.09 ms  (cached)
+Module newton._src.sim.graph_coloring abbbefd load on device 'cpu' took 3.28 ms  (cached)
+Module newton._src.solvers.mujoco.kernels 88a820e load on device 'cuda:0' took 28.83 ms  (cached)
+Module repeat_array_kernel_19a3fa57 ba87b84 load on device 'cuda:0' took 3.05 ms  (cached)
+Module repeat_array_kernel_19a3fa57 35db7c2 load on device 'cuda:0' took 3.02 ms  (cached)
+Module repeat_array_kernel_19a3fa57 a71dea8 load on device 'cuda:0' took 2.73 ms  (cached)
+Module repeat_array_kernel_19a3fa57 d77e5ce load on device 'cuda:0' took 2.77 ms  (cached)
+Module repeat_array_kernel_19a3fa57 d445762 load on device 'cuda:0' took 3.27 ms  (cached)
+Module repeat_array_kernel_19a3fa57 2b8831d load on device 'cuda:0' took 3.49 ms  (cached)
+Module repeat_array_kernel_19a3fa57 97a42c9 load on device 'cuda:0' took 2.86 ms  (cached)
+Module mujoco_warp._src.io a2fd864 load on device 'cuda:0' took 5.94 ms  (cached)
+Module mujoco_warp._src.smooth 3f89f86 load on device 'cuda:0' took 6.79 ms  (cached)
+Module _tile_cholesky_factorize__locals__cholesky_factorize_763979fb 3443e72 load on device 'cuda:0' took 185.17 ms  (cached)
+Module _tile_cholesky_solve__locals__cholesky_solve_60e7f5b6 bacf277 load on device 'cuda:0' took 56.92 ms  (cached)
+Module newton._src.sim.articulation df004de load on device 'cuda:0' took 8.29 ms  (cached)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 7.43 ms  (cached)
+Module newton._src.sim.collide 426fb1c load on device 'cuda:0' took 4.36 ms  (cached)
+Module newton._src.geometry.broad_phase_nxn 50d95f3 load on device 'cuda:0' took 2.84 ms  (cached)
+Module narrow_phase_primitive_write_contact 74fb925 load on device 'cuda:0' took 3.78 ms  (cached)
+Module narrow_phase_gjk_mpr_True_write_contact_default_default a714c94 load on device 'cuda:0' took 6.02 ms  (cached)
+Module newton._src.geometry.narrow_phase 677b8d2 load on device 'cuda:0' took 3.46 ms  (cached)
+Module newton._src.geometry.contact_reduction_global 1e557ea load on device 'cuda:0' took 2.59 ms  (cached)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 3.87 ms  (cached)
+Module newton._src.geometry.sdf_contact ad85f16 load on device 'cuda:0' took 3.11 ms  (cached)
+Module narrow_phase_mesh_plane_write_contact_to_reducer_True d064a77 load on device 'cuda:0' took 3.69 ms  (cached)
+Module mesh_triangle_contacts_to_reducer_kernel_06a2ef31 475a937 load on device 'cuda:0' took 5.50 ms  (cached)
+Module newton._src.geometry.contact_reduction_global 5c5decd load on device 'cuda:0' took 3.19 ms  (cached)
+Module sdf_contact_write_contact_to_reducer_False_True 392ea80 load on device 'cuda:0' took 5.55 ms  (cached)
+Module export_reduced_contacts_write_contact 9fad287 load on device 'cuda:0' took 10.66 ms  (cached)
+Module mujoco_warp._src.constraint be9a3cd load on device 'cuda:0' took 6.28 ms  (cached)
+Module _efc_contact_init__locals__kernel_454d55b8 454d55b load on device 'cuda:0' took 2.66 ms  (cached)
+Module _efc_contact_jac_dense__locals__kernel_960e6eef ea79dbf load on device 'cuda:0' took 2.77 ms  (cached)
+Module _efc_contact_update__locals__kernel_e18e31e4 e18e31e load on device 'cuda:0' took 3.70 ms  (cached)
+Module mujoco_warp._src.forward eaba7d8 load on device 'cuda:0' took 11.38 ms  (cached)
+Module mujoco_warp._src.passive 4c3b23b load on device 'cuda:0' took 3.54 ms  (cached)
+Module mujoco_warp._src.forward 7911fea load on device 'cuda:0' took 4.71 ms  (cached)
+Module mujoco_warp._src.support 46793d4 load on device 'cuda:0' took 2.68 ms  (cached)
+Module _tile_cholesky_factorize_solve__locals__cholesky_factorize_solve_ef167f26 849b094 load on device 'cuda:0' took 194.16 ms  (cached)
+Module mujoco_warp._src.solver 15a35aa load on device 'cuda:0' took 5.55 ms  (cached)
+Module solve_init_jaref__locals__kernel_7b8c3d51 7b8c3d5 load on device 'cuda:0' took 2.92 ms  (cached)
+Module mul_m_dense__locals___mul_m_dense_71af815b 71af815 load on device 'cuda:0' took 3.11 ms  (cached)
+Module update_constraint_efc__locals__kernel_62653db3 62653db load on device 'cuda:0' took 3.15 ms  (cached)
+Module update_constraint_gauss_cost__locals__kernel_0bc71de0 0bc71de load on device 'cuda:0' took 3.24 ms  (cached)
+Module update_gradient_JTDAJ_dense_tiled__locals__kernel_6bb52772 e03431d load on device 'cuda:0' took 4.01 ms  (cached)
+Module update_gradient_cholesky__locals__kernel_757084f1 4836c87 load on device 'cuda:0' took 237.67 ms  (cached)
+Module linesearch_iterative__locals__kernel_da7f24f7 789799c load on device 'cuda:0' took 3.46 ms  (cached)
+Module mujoco_warp._src.sensor 25449cd load on device 'cuda:0' took 6.59 ms  (cached)
+Module mujoco_warp._src.derivative 704aad8 load on device 'cuda:0' took 3.93 ms  (cached)
+=== PHASE TIMING (s) :: robot_anymal_d ===
+  after_import              total=   3.40  delta=   3.40
+  after_viewer_ctor         total=   3.59  delta=   0.19
+  after_example_init        total=   7.15  delta=   3.56
+  after_step                total=   7.15  delta=   0.00
+  after_render              total=   7.15  delta=   0.00
+  end                       total=   7.15  delta=   0.00
+TOTAL: 7.15s
+===== iter=3 / cold / kamino_robot_dr_legs =====
+C:\Users\mmohajerani\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\newton\_src\sim\builder.py:2601: UserWarning: No articulation was found but 36 joints were parsed: [/DR_Legs/Joints/j1_l_i, /DR_Legs/Joints/j2_l_i, /DR_Legs/Joints/j3_l_i, /DR_Legs/Joints/j4_l_i, /DR_Legs/Joints/j5_l_i, /DR_Legs/Joints/j6_l_i, /DR_Legs/Joints/j7_l_i, /DR_Legs/Joints/j8_l_i, /DR_Legs/Joints/j9_l_i, /DR_Legs/Joints/j1_l_o, /DR_Legs/Joints/j2_l_o, /DR_Legs/Joints/j3_l_o, /DR_Legs/Joints/j4_l_o, /DR_Legs/Joints/j5_l_o, /DR_Legs/Joints/j6_l_o, /DR_Legs/Joints/j7_l_o, /DR_Legs/Joints/j8_l_o, /DR_Legs/Joints/j9_l_o, /DR_Legs/Joints/j1_r_i, /DR_Legs/Joints/j2_r_i, /DR_Legs/Joints/j3_r_i, /DR_Legs/Joints/j4_r_i, /DR_Legs/Joints/j5_r_i, /DR_Legs/Joints/j6_r_i, /DR_Legs/Joints/j7_r_i, /DR_Legs/Joints/j8_r_i, /DR_Legs/Joints/j9_r_i, /DR_Legs/Joints/j1_r_o, /DR_Legs/Joints/j2_r_o, /DR_Legs/Joints/j3_r_o, /DR_Legs/Joints/j4_r_o, /DR_Legs/Joints/j5_r_o, /DR_Legs/Joints/j6_r_o, /DR_Legs/Joints/j7_r_o, /DR_Legs/Joints/j8_r_o, /DR_Legs/Joints/j9_r_o]. Make sure your USD asset includes an articulation root prim with the PhysicsArticulationRootAPI.
+If you want to proceed with these orphan joints, make sure to call ModelBuilder.finalize(skip_validation_joints=True) to avoid raising a ValueError. Note that not all solvers will support such a configuration.
+  return parse_usd(
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.geometry.inertia 2e0efd6 load on device 'cuda:0' took 2640.63 ms  (compiled)
+Module validate_and_correct_inertia_kernel_a682b50c a682b50 load on device 'cuda:0' took 379.23 ms  (compiled)
+Module newton._src.solvers.kamino._src.core.conversions c5498a2 load on device 'cuda:0' took 4722.92 ms  (compiled)
+Module newton._src.solvers.kamino._src.core.bodies 7f35ca5 load on device 'cuda:0' took 535.03 ms  (compiled)
+Module newton._src.solvers.kamino._src.geometry.unified a630f1e load on device 'cuda:0' took 988.26 ms  (compiled)
+Module newton._src.solvers.kamino._src.utils.world_equivalence 5490f3c load on device 'cuda:0' took 301.37 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.fk.kernels 9379285 load on device 'cuda:0' took 17712.38 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.constraints 1c190a2 load on device 'cuda:0' took 412.92 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.jacobians 949ff53 load on device 'cuda:0' took 4521.82 ms  (compiled)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 3217.61 ms  (compiled)
+Module newton._src.solvers.kamino._src.geometry.contacts 5dc189e load on device 'cuda:0' took 430.01 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.joints 7527995 load on device 'cuda:0' took 1193.50 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.limits 3157d9f load on device 'cuda:0' took 613.14 ms  (compiled)
+Module newton._src.solvers.kamino._src.dynamics.wrenches 65b0010 load on device 'cuda:0' took 882.71 ms  (compiled)
+Module newton._src.solvers.kamino._src.dynamics.delassus 38e708f load on device 'cuda:0' took 714.30 ms  (compiled)
+Module newton._src.solvers.kamino._src.dynamics.dual fa0fa89 load on device 'cuda:0' took 1022.75 ms  (compiled)
+Module newton._src.solvers.kamino._src.geometry.keying b655b3e load on device 'cuda:0' took 149.70 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.warmstart 7444518 load on device 'cuda:0' took 927.68 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels 82e8723 load on device 'cuda:0' took 2851.34 ms  (compiled)
+Module newton._src.solvers.kamino._src.linalg.factorize.llt_blocked 8d4d103 load on device 'cuda:0' took 32156.90 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels ef61502 load on device 'cuda:0' took 2983.32 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels d8fea14 load on device 'cuda:0' took 3951.05 ms  (compiled)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels 4be1e70 load on device 'cuda:0' took 3618.45 ms  (compiled)
+Module newton._src.solvers.kamino._src.integrators.euler d36eb8b load on device 'cuda:0' took 367.84 ms  (compiled)
+Module newton._src.solvers.kamino._src.core.time bdcc507 load on device 'cuda:0' took 181.60 ms  (compiled)
+Module newton._src.solvers.kamino._src.kinematics.resets d26c318 load on device 'cuda:0' took 1691.51 ms  (compiled)
+Module newton._src.geometry.broad_phase_nxn 50d95f3 load on device 'cuda:0' took 346.09 ms  (compiled)
+Module narrow_phase_primitive_write_contact_unified_kamino c159f57 load on device 'cuda:0' took 2710.74 ms  (compiled)
+Module narrow_phase_gjk_mpr_True_write_contact_unified_kamino_default_default 2bc66f0 load on device 'cuda:0' took 10479.33 ms  (compiled)
+Module newton._src.geometry.narrow_phase 677b8d2 load on device 'cuda:0' took 1536.77 ms  (compiled)
+Module newton._src.geometry.contact_reduction_global 1e557ea load on device 'cuda:0' took 601.50 ms  (compiled)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 1470.96 ms  (compiled)
+Module newton._src.geometry.sdf_contact ad85f16 load on device 'cuda:0' took 254.92 ms  (compiled)
+Module narrow_phase_mesh_plane_write_contact_to_reducer_True d064a77 load on device 'cuda:0' took 628.62 ms  (compiled)
+Module mesh_triangle_contacts_to_reducer_kernel_06a2ef31 475a937 load on device 'cuda:0' took 9466.16 ms  (compiled)
+Module newton._src.geometry.contact_reduction_global 5c5decd load on device 'cuda:0' took 639.38 ms  (compiled)
+Module sdf_contact_write_contact_to_reducer_False_True 392ea80 load on device 'cuda:0' took 2859.08 ms  (compiled)
+Module export_reduced_contacts_write_contact_unified_kamino 9596458 load on device 'cuda:0' took 449.90 ms  (compiled)
+=== PHASE TIMING (s) :: kamino_robot_dr_legs ===
+  after_import              total=   3.31  delta=   3.31
+  after_viewer_ctor         total=   3.51  delta=   0.20
+  after_example_init        total= 127.58  delta= 124.08
+  after_step                total= 127.59  delta=   0.00
+  after_render              total= 127.59  delta=   0.00
+  end                       total= 127.59  delta=   0.00
+TOTAL: 127.59s
+===== iter=3 / warm / kamino_robot_dr_legs =====
+C:\Users\mmohajerani\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\newton\_src\sim\builder.py:2601: UserWarning: No articulation was found but 36 joints were parsed: [/DR_Legs/Joints/j1_l_i, /DR_Legs/Joints/j2_l_i, /DR_Legs/Joints/j3_l_i, /DR_Legs/Joints/j4_l_i, /DR_Legs/Joints/j5_l_i, /DR_Legs/Joints/j6_l_i, /DR_Legs/Joints/j7_l_i, /DR_Legs/Joints/j8_l_i, /DR_Legs/Joints/j9_l_i, /DR_Legs/Joints/j1_l_o, /DR_Legs/Joints/j2_l_o, /DR_Legs/Joints/j3_l_o, /DR_Legs/Joints/j4_l_o, /DR_Legs/Joints/j5_l_o, /DR_Legs/Joints/j6_l_o, /DR_Legs/Joints/j7_l_o, /DR_Legs/Joints/j8_l_o, /DR_Legs/Joints/j9_l_o, /DR_Legs/Joints/j1_r_i, /DR_Legs/Joints/j2_r_i, /DR_Legs/Joints/j3_r_i, /DR_Legs/Joints/j4_r_i, /DR_Legs/Joints/j5_r_i, /DR_Legs/Joints/j6_r_i, /DR_Legs/Joints/j7_r_i, /DR_Legs/Joints/j8_r_i, /DR_Legs/Joints/j9_r_i, /DR_Legs/Joints/j1_r_o, /DR_Legs/Joints/j2_r_o, /DR_Legs/Joints/j3_r_o, /DR_Legs/Joints/j4_r_o, /DR_Legs/Joints/j5_r_o, /DR_Legs/Joints/j6_r_o, /DR_Legs/Joints/j7_r_o, /DR_Legs/Joints/j8_r_o, /DR_Legs/Joints/j9_r_o]. Make sure your USD asset includes an articulation root prim with the PhysicsArticulationRootAPI.
+If you want to proceed with these orphan joints, make sure to call ModelBuilder.finalize(skip_validation_joints=True) to avoid raising a ValueError. Note that not all solvers will support such a configuration.
+  return parse_usd(
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.geometry.inertia 2e0efd6 load on device 'cuda:0' took 8.37 ms  (cached)
+Module validate_and_correct_inertia_kernel_a682b50c a682b50 load on device 'cuda:0' took 3.14 ms  (cached)
+Module newton._src.solvers.kamino._src.core.conversions c5498a2 load on device 'cuda:0' took 15.36 ms  (cached)
+Module newton._src.solvers.kamino._src.core.bodies 7f35ca5 load on device 'cuda:0' took 3.06 ms  (cached)
+Module newton._src.solvers.kamino._src.geometry.unified a630f1e load on device 'cuda:0' took 3.11 ms  (cached)
+Module newton._src.solvers.kamino._src.utils.world_equivalence 5490f3c load on device 'cuda:0' took 3.29 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.fk.kernels 9379285 load on device 'cuda:0' took 106.05 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.constraints 1c190a2 load on device 'cuda:0' took 4.43 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.jacobians 949ff53 load on device 'cuda:0' took 6.39 ms  (cached)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 5.36 ms  (cached)
+Module newton._src.solvers.kamino._src.geometry.contacts 5dc189e load on device 'cuda:0' took 3.65 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.joints 7527995 load on device 'cuda:0' took 4.14 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.limits 3157d9f load on device 'cuda:0' took 3.71 ms  (cached)
+Module newton._src.solvers.kamino._src.dynamics.wrenches 65b0010 load on device 'cuda:0' took 3.30 ms  (cached)
+Module newton._src.solvers.kamino._src.dynamics.delassus 38e708f load on device 'cuda:0' took 2.99 ms  (cached)
+Module newton._src.solvers.kamino._src.dynamics.dual fa0fa89 load on device 'cuda:0' took 3.75 ms  (cached)
+Module newton._src.solvers.kamino._src.geometry.keying b655b3e load on device 'cuda:0' took 3.48 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.warmstart 7444518 load on device 'cuda:0' took 2.95 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels 82e8723 load on device 'cuda:0' took 6.09 ms  (cached)
+Module newton._src.solvers.kamino._src.linalg.factorize.llt_blocked 8d4d103 load on device 'cuda:0' took 465.22 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels ef61502 load on device 'cuda:0' took 6.76 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels d8fea14 load on device 'cuda:0' took 6.86 ms  (cached)
+Module newton._src.solvers.kamino._src.solvers.padmm.kernels 4be1e70 load on device 'cuda:0' took 6.35 ms  (cached)
+Module newton._src.solvers.kamino._src.integrators.euler d36eb8b load on device 'cuda:0' took 2.95 ms  (cached)
+Module newton._src.solvers.kamino._src.core.time bdcc507 load on device 'cuda:0' took 3.12 ms  (cached)
+Module newton._src.solvers.kamino._src.kinematics.resets d26c318 load on device 'cuda:0' took 4.43 ms  (cached)
+Module newton._src.geometry.broad_phase_nxn 50d95f3 load on device 'cuda:0' took 2.41 ms  (cached)
+Module narrow_phase_primitive_write_contact_unified_kamino c159f57 load on device 'cuda:0' took 3.83 ms  (cached)
+Module narrow_phase_gjk_mpr_True_write_contact_unified_kamino_default_default 2bc66f0 load on device 'cuda:0' took 5.79 ms  (cached)
+Module newton._src.geometry.narrow_phase 677b8d2 load on device 'cuda:0' took 3.67 ms  (cached)
+Module newton._src.geometry.contact_reduction_global 1e557ea load on device 'cuda:0' took 2.90 ms  (cached)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 4.04 ms  (cached)
+Module newton._src.geometry.sdf_contact ad85f16 load on device 'cuda:0' took 2.43 ms  (cached)
+Module narrow_phase_mesh_plane_write_contact_to_reducer_True d064a77 load on device 'cuda:0' took 2.47 ms  (cached)
+Module mesh_triangle_contacts_to_reducer_kernel_06a2ef31 475a937 load on device 'cuda:0' took 5.35 ms  (cached)
+Module newton._src.geometry.contact_reduction_global 5c5decd load on device 'cuda:0' took 3.24 ms  (cached)
+Module sdf_contact_write_contact_to_reducer_False_True 392ea80 load on device 'cuda:0' took 3.93 ms  (cached)
+Module export_reduced_contacts_write_contact_unified_kamino 9596458 load on device 'cuda:0' took 2.87 ms  (cached)
+=== PHASE TIMING (s) :: kamino_robot_dr_legs ===
+  after_import              total=   3.44  delta=   3.44
+  after_viewer_ctor         total=   3.64  delta=   0.20
+  after_example_init        total=   8.00  delta=   4.36
+  after_step                total=   8.00  delta=   0.00
+  after_render              total=   8.00  delta=   0.00
+  end                       total=   8.00  delta=   0.00
+TOTAL: 8.00s
+===== iter=3 / cold / cloth_hanging =====
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.sim.graph_coloring abbbefd load on device 'cpu' took 1420.29 ms  (compiled)
+Module newton._src.solvers.vbd.particle_vbd_kernels 7e5d603 load on device 'cpu' took 2615.74 ms  (compiled)
+Module newton._src.geometry.kernels c2c1f56 load on device 'cuda:0' took 5408.21 ms  (compiled)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 3597.37 ms  (compiled)
+Module newton._src.sim.collide 426fb1c load on device 'cuda:0' took 993.39 ms  (compiled)
+Module narrow_phase_primitive_write_contact 74fb925 load on device 'cuda:0' took 2358.23 ms  (compiled)
+Module narrow_phase_gjk_mpr_True_write_contact_support_map_lean_post_process_minkowski_only 9f30990 load on device 'cuda:0' took 5711.66 ms  (compiled)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 1565.58 ms  (compiled)
+Module newton._src.solvers.vbd.rigid_vbd_kernels d72f88d load on device 'cuda:0' took 10350.66 ms  (compiled)
+Module newton._src.geometry.kernels 2993ff9 load on device 'cuda:0' took 5758.24 ms  (compiled)
+Module newton._src.solvers.vbd.particle_vbd_kernels e814db9 load on device 'cuda:0' took 5477.10 ms  (compiled)
+Module newton._src.solvers.vbd.particle_vbd_kernels ac82bf6 load on device 'cuda:0' took 5425.54 ms  (compiled)
+Module newton._src.viewer.kernels 77a557e load on device 'cuda:0' took 3341.57 ms  (compiled)
+Module newton._src.viewer.kernels 9430990 load on device 'cuda:0' took 3640.03 ms  (compiled)
+=== PHASE TIMING (s) :: cloth_hanging ===
+  after_import              total=   3.27  delta=   3.27
+  after_viewer_ctor         total=   3.47  delta=   0.20
+  after_example_init        total=  55.40  delta=  51.93
+  after_step                total=  55.41  delta=   0.01
+  after_render              total=  62.54  delta=   7.13
+  end                       total=  62.54  delta=   0.00
+TOTAL: 62.54s
+===== iter=3 / warm / cloth_hanging =====
+[variant] o3: optimization_level=3 (mathdx default)
+Warp 1.13.0 initialized:
+   CUDA Toolkit 12.9, Driver 13.0
+   Devices:
+     "cpu"      : "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel"
+     "cuda:0"   : "NVIDIA RTX 5000 Ada Generation Laptop GPU" (16 GiB, sm_89, mempool enabled)
+   Kernel cache:
+     \\?\C:\Users\mmohajerani\AppData\Local\NVIDIA\warp\Cache\1.13.0
+Module newton._src.sim.graph_coloring abbbefd load on device 'cpu' took 4.18 ms  (cached)
+Module newton._src.solvers.vbd.particle_vbd_kernels 7e5d603 load on device 'cpu' took 2.50 ms  (cached)
+Module newton._src.geometry.kernels c2c1f56 load on device 'cuda:0' took 6.48 ms  (cached)
+Module newton._src.viewer.kernels 4f09cd0 load on device 'cuda:0' took 8.24 ms  (cached)
+Module newton._src.sim.collide 426fb1c load on device 'cuda:0' took 4.09 ms  (cached)
+Module narrow_phase_primitive_write_contact 74fb925 load on device 'cuda:0' took 3.90 ms  (cached)
+Module narrow_phase_gjk_mpr_True_write_contact_support_map_lean_post_process_minkowski_only 9f30990 load on device 'cuda:0' took 4.71 ms  (cached)
+Module newton._src.geometry.narrow_phase 618d4ab load on device 'cuda:0' took 11.62 ms  (cached)
+Module newton._src.solvers.vbd.rigid_vbd_kernels d72f88d load on device 'cuda:0' took 6.89 ms  (cached)
+Module newton._src.geometry.kernels 2993ff9 load on device 'cuda:0' took 5.91 ms  (cached)
+Module newton._src.solvers.vbd.particle_vbd_kernels e814db9 load on device 'cuda:0' took 5.76 ms  (cached)
+Module newton._src.solvers.vbd.particle_vbd_kernels ac82bf6 load on device 'cuda:0' took 5.22 ms  (cached)
+Module newton._src.viewer.kernels 77a557e load on device 'cuda:0' took 5.87 ms  (cached)
+Module newton._src.viewer.kernels 9430990 load on device 'cuda:0' took 7.13 ms  (cached)
+=== PHASE TIMING (s) :: cloth_hanging ===
+  after_import              total=   3.45  delta=   3.45
+  after_viewer_ctor         total=   3.64  delta=   0.19
+  after_example_init        total=   4.85  delta=   1.21
+  after_step                total=   4.86  delta=   0.01
+  after_render              total=   4.91  delta=   0.05
+  end                       total=   4.91  delta=   0.00
+TOTAL: 4.91s

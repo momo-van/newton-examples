@@ -23,6 +23,44 @@ EXAMPLE_PKG_MAP = {
 }
 
 
+def _apply_warp_variant():
+    """Apply benchmark variant configs to Warp before any kernel compiles.
+
+    BENCH_VARIANT=baseline      -> no overrides (default)
+    BENCH_VARIANT=o2_nomathdx   -> optimization_level=2, enable_mathdx_gemm=False
+    """
+    variant = os.environ.get("BENCH_VARIANT", "baseline").lower()
+    if variant in ("", "baseline", "default"):
+        print(f"[variant] baseline (no Warp overrides)")
+        return
+    import warp as wp
+    if variant == "o2_nomathdx":
+        wp.config.optimization_level = 2
+        wp.config.enable_mathdx_gemm = False
+        print(f"[variant] o2_nomathdx: optimization_level=2, enable_mathdx_gemm=False")
+    elif variant == "o3":
+        wp.config.optimization_level = 3
+        print(f"[variant] o3: optimization_level=3 (mathdx default)")
+    elif variant == "o3_nomathdx":
+        wp.config.optimization_level = 3
+        wp.config.enable_mathdx_gemm = False
+        print(f"[variant] o3_nomathdx: optimization_level=3, enable_mathdx_gemm=False")
+    elif variant == "o2":
+        wp.config.optimization_level = 2
+        print(f"[variant] o2: optimization_level=2 (mathdx default)")
+    elif variant == "o1":
+        wp.config.optimization_level = 1
+        print(f"[variant] o1: optimization_level=1 (mathdx default)")
+    elif variant == "o0":
+        wp.config.optimization_level = 0
+        print(f"[variant] o0: optimization_level=0 (mathdx default)")
+    elif variant == "nomathdx":
+        wp.config.enable_mathdx_gemm = False
+        print(f"[variant] nomathdx: enable_mathdx_gemm=False (optimization default)")
+    else:
+        print(f"[variant] WARN unknown BENCH_VARIANT={variant!r}, using baseline")
+
+
 def main():
     if len(sys.argv) < 2:
         print("usage: time_example_phases.py <example_key>")
@@ -34,6 +72,8 @@ def main():
     module_path = EXAMPLE_PKG_MAP[example_key]
 
     marks = {"start": time.perf_counter()}
+
+    _apply_warp_variant()
 
     import newton  # noqa: F401
     import newton.examples  # noqa: F401
